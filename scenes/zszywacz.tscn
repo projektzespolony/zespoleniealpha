@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://djq5rm3tytj5m"]
+
+[ext_resource type="Texture2D" uid="uid://cs8vqw7nidojy" path="res://assets/art/zszywacz-1.jpg" id="1_8ggvj"]
+[ext_resource type="Script" path="res://scenes/zszywacz.gd" id="2_15dtw"]
+
+[node name="Zszywacz" type="Node2D"]
+
+[node name="Zszywacz-1" type="Sprite2D" parent="."]
+texture = ExtResource("1_8ggvj")
+script = ExtResource("2_15dtw")
