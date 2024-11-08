@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cs8vqw7nidojy"
-path="res://.godot/imported/zszywacz-1.jpg-f02a45fa5589db1a6167423a47adb64a.ctex"
+path="res://.godot/imported/stapler.jpg-623ae21ce0374b4eed159c0e7feb6978.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/zszywacz-1.jpg"
-dest_files=["res://.godot/imported/zszywacz-1.jpg-f02a45fa5589db1a6167423a47adb64a.ctex"]
+source_file="res://assets/art/stapler.jpg"
+dest_files=["res://.godot/imported/stapler.jpg-623ae21ce0374b4eed159c0e7feb6978.ctex"]
 
 [params]
 
