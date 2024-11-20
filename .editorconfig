@@ -1,0 +1,28 @@
+# https://editorconfig.org/
+root = true
+
+[*]
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+charset = utf-8
+
+[*.{bat,cmd,ps1}]
+end_of_line = crlf
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.{py,ipynb,gd}]
+indent_size = 4
+indent_style = space
+
+[*.{gd,tscn}]
+indent_size = 4
+indent_style = tab
+
+[*.{yml,yaml,json,toml}]
+indent_size = 2
+
+[*.tsv]
+indent_style = tab
