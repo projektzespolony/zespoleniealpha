@@ -7,7 +7,7 @@ class_name startingStats
 #Default values
 @export var max_health : int = 10
 @export var attack_damage : float = 5
-@export var attack_speed : float = 0.5
+@export var attack_speed : float = 2
 @export var speed : float = 500
 
 #Modifiers
