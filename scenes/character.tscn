@@ -20,7 +20,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_adwbh"]
 size = Vector2(128, 126)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_aveaj")
 baseStats = ExtResource("2_5nkx8")
@@ -31,9 +31,10 @@ sprite_frames = SubResource("SpriteFrames_n1nlo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_adwbh")
 
-[node name="Stapler" parent="." instance=ExtResource("3_gkrvg")]
+[node name="Stapler" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_gkrvg")]
 position = Vector2(115, 4.76837e-07)
 scale = Vector2(0.441049, 0.441049)
+player = NodePath("..")
 
 [node name="Stats" type="Node" parent="."]
 script = ExtResource("5_4b53r")
