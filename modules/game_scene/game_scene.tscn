@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce5jdu83m0hw8"]
+
+[ext_resource type="PackedScene" uid="uid://c4bwfp1w6jwwn" path="res://modules/character/player/player.tscn" id="1_urge4"]
+[ext_resource type="PackedScene" uid="uid://dlyycq2vepell" path="res://modules/character/enemies/enemy/enemy.tscn" id="2_ysl5v"]
+
+[node name="GameScene" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_urge4")]
+position = Vector2(713, 314)
+
+[node name="enemy" parent="." instance=ExtResource("2_ysl5v")]
+position = Vector2(115, 124)
+
+[node name="enemy2" parent="." instance=ExtResource("2_ysl5v")]
+position = Vector2(430, 85)
+
+[node name="enemy3" parent="." instance=ExtResource("2_ysl5v")]
+position = Vector2(768, 64)
+
+[node name="enemy4" parent="." instance=ExtResource("2_ysl5v")]
+position = Vector2(1061, 170)

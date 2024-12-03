@@ -14,3 +14,18 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# C#
+nupkg/
+bin/
+obj/
+.generated/
+
+# VSCode
+.vs/
+
+# Mac OS
+.DS_Store
+
+# Blender
+*.blend1
