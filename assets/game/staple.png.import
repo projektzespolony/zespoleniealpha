@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfkrsjaaucnr"
-path="res://.godot/imported/icon.svg-8941868ee22bd0efaf8d27ba38379f39.ctex"
+uid="uid://c6lm5n1m8uku2"
+path="res://.godot/imported/staple.png-a4e1ff521ed354b851c7b0582692368d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-8941868ee22bd0efaf8d27ba38379f39.ctex"]
+source_file="res://assets/game/staple.png"
+dest_files=["res://.godot/imported/staple.png-a4e1ff521ed354b851c7b0582692368d.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

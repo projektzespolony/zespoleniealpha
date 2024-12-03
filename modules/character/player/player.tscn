@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://c4bwfp1w6jwwn"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_aveaj"]
-[ext_resource type="Resource" uid="uid://bnt1eloi4kgi5" path="res://tres/Player.tres" id="2_5nkx8"]
-[ext_resource type="Texture2D" uid="uid://bfkrsjaaucnr" path="res://assets/art/icon.svg" id="2_8hw1m"]
-[ext_resource type="PackedScene" uid="uid://bqu30g2n6e771" path="res://scenes/stapler.tscn" id="3_gkrvg"]
-[ext_resource type="Script" path="res://scripts/stats.gd" id="5_4b53r"]
+[ext_resource type="Script" path="res://modules/character/player/player.gd" id="1_aveaj"]
+[ext_resource type="Resource" uid="uid://bnt1eloi4kgi5" path="res://DELETE/Player.tres" id="2_5nkx8"]
+[ext_resource type="Texture2D" uid="uid://bfkrsjaaucnr" path="res://assets/meta/icon.svg" id="2_8hw1m"]
+[ext_resource type="PackedScene" uid="uid://bqu30g2n6e771" path="res://modules/weapons/stapler/stapler.tscn" id="3_gkrvg"]
+[ext_resource type="Script" path="res://DELETE/stats.gd" id="5_4b53r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n1nlo"]
 animations = [{

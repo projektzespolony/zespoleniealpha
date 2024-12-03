@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bqu30g2n6e771"]
 
-[ext_resource type="Texture2D" uid="uid://cs8vqw7nidojy" path="res://assets/art/stapler.jpg" id="1_qhw1b"]
-[ext_resource type="Script" path="res://scripts/stapler.gd" id="2_wauar"]
-[ext_resource type="PackedScene" uid="uid://djq5rm3tytj5m" path="res://scenes/staple.tscn" id="3_4s4xk"]
+[ext_resource type="Texture2D" uid="uid://cs8vqw7nidojy" path="res://assets/game/stapler.jpg" id="1_qhw1b"]
+[ext_resource type="Script" path="res://modules/weapons/stapler/stapler.gd" id="2_wauar"]
+[ext_resource type="PackedScene" uid="uid://djq5rm3tytj5m" path="res://modules/weapons/stapler/staple.tscn" id="3_4s4xk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mhfoq"]
 radius = 141.3
