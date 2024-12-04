@@ -2,34 +2,26 @@ extends CharacterBody2D
 
 class_name Character
 
-@export var health: int = 100
-@export var max_health: int = 100
-@export var speed: float = 10
-@export var strength: int = 10
+@export var baseStats: initialStats
+@onready var stats = $Stats
 
-func _init(_health: int, _max_health: int, _speed: float, _strength: int) -> void:
-	health = _health
-	max_health = _max_health
-	speed = _speed
-	strength = _strength
-
+func _ready() -> void:
+	print("Stats:", stats )
+	print("BaseStats: ", baseStats)
+	stats.initialize(baseStats)
+	
 func take_damage(damage: int) -> void:
-	if health - damage <= 0:
-		health = 0
+	if stats.health - damage <= 0:
+		stats.health = 0
 		return
-
-	health -= damage
-
+	
+	stats.health -= damage
+	print( stats.health, "took damage")
 	if !is_alive():
 		queue_free()
 
-
-
 func is_alive() -> bool:
-	return health > 0
+	return stats.health > 0
 
-func get_movement_speed_modifier() -> float:
-	if speed <= 0:
-		return 0
-
-	return 1.0 + (speed / 400.0)
+func get_movement_speed_modifier():
+	return stats.speed/400 + 1

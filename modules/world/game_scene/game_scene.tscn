@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://ce5jdu83m0hw8"]
+[gd_scene load_steps=4 format=3 uid="uid://ce5jdu83m0hw8"]
 
 [ext_resource type="PackedScene" uid="uid://bx3m2865fnrtv" path="res://modules/character/enemies/franke/franke.tscn" id="1_dtcjk"]
 [ext_resource type="PackedScene" uid="uid://c4bwfp1w6jwwn" path="res://modules/character/player/player.tscn" id="2_3jln0"]
+[ext_resource type="Script" path="res://modules/character/stats/initialStats.gd" id="3_6jtde"]
 
 [node name="GameScene" type="Node2D"]
 
-[node name="Franke" parent="." instance=ExtResource("1_dtcjk")]
-position = Vector2(713, 422)
-
 [node name="Player" parent="." instance=ExtResource("2_3jln0")]
-position = Vector2(713, 422)
+position = Vector2(184, 243)
+collision_layer = 8
+collision_mask = 4
+
+[node name="Franke" parent="." instance=ExtResource("1_dtcjk")]
+position = Vector2(541, 245)
+baseStats = ExtResource("3_6jtde")
