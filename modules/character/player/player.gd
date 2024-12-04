@@ -1,17 +1,9 @@
-extends CharacterBody2D
+extends Character
 
-@export var speed = 400
-@export var baseStats: startingStats
-@onready var stats = $Stats
+class_name Player
 
-func _ready() -> void:
-	stats.initialize(baseStats)
-	
-func get_input():
-	look_at(get_global_mouse_position())
-	var input_direction = Input.get_vector("left", "right", "up", "down")
-	velocity = input_direction * stats.speed
+var player_input: PlayerInput
 
-func _physics_process(_delta):
-	get_input()
-	move_and_slide()
+func _init():
+	player_input = PlayerInput.new(self)
+	add_child(player_input)
