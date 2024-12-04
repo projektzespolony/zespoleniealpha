@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bx3m2865fnrtv"]
+
+[ext_resource type="Script" path="res://modules/character/enemies/franke/franke.gd" id="1_0ytgd"]
+[ext_resource type="Texture2D" uid="uid://bfkrsjaaucnr" path="res://assets/meta/icon.svg" id="2_plb5u"]
+[ext_resource type="PackedScene" uid="uid://bqu30g2n6e771" path="res://modules/weapons/stapler/stapler.tscn" id="3_o8wjo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n1nlo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_plb5u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adwbh"]
+size = Vector2(128, 126)
+
+[node name="Franke" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 4
+motion_mode = 1
+script = ExtResource("1_0ytgd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n1nlo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_adwbh")
+
+[node name="Stapler" parent="." instance=ExtResource("3_o8wjo")]
+position = Vector2(115, 4.76837e-07)
+scale = Vector2(0.441049, 0.441049)
