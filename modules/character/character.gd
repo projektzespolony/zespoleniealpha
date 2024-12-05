@@ -13,11 +13,8 @@ func _ready() -> void:
 
 
 func take_damage(damage: int) -> void:
-	if stats.health - damage <= 0:
-		stats.health = 0
-	else:
-		stats.health -= damage
-	print(stats.health, "took damage")
+	stats.health -= damage / stats.damage_reduction
+	print("CHARACTER: ",self ,"Current health: ", stats.health, " took ", damage)
 	if !is_alive():
 		queue_free()
 
