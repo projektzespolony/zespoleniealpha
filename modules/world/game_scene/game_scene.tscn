@@ -1,8 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce5jdu83m0hw8"]
+[gd_scene load_steps=6 format=3 uid="uid://ce5jdu83m0hw8"]
 
 [ext_resource type="PackedScene" uid="uid://bx3m2865fnrtv" path="res://modules/character/enemies/franke/franke.tscn" id="1_dtcjk"]
 [ext_resource type="PackedScene" uid="uid://c4bwfp1w6jwwn" path="res://modules/character/player/player.tscn" id="2_3jln0"]
 [ext_resource type="Script" path="res://modules/character/stats/initialStats.gd" id="3_6jtde"]
+
+[sub_resource type="Resource" id="Resource_ijd0n"]
+script = ExtResource("3_6jtde")
+max_health = 10
+speed = 4.0
+melee_attack_damage = 5.0
+melee_attack_speed = 2.0
+ranged_attack_damage = 3.0
+ranged_attack_speed = 2.0
+melee_attack_damage_modifier = 1.0
+melee_attack_speed_modifier = 1.0
+ranged_attack_damage_modifier = 1.0
+ranged_attack_speed_modifier = 1.0
+speed_modifier = 1.5
+damage_reduction_modifier = 1.0
 
 [sub_resource type="Resource" id="Resource_a0au1"]
 script = ExtResource("3_6jtde")
@@ -25,6 +40,7 @@ damage_reduction_modifier = 1.0
 position = Vector2(184, 243)
 collision_layer = 8
 collision_mask = 4
+base_stats = SubResource("Resource_ijd0n")
 
 [node name="Franke" parent="." instance=ExtResource("1_dtcjk")]
 position = Vector2(541, 245)
