@@ -18,6 +18,7 @@ config/icon="res://assets/meta/icon.svg"
 [autoload]
 
 InteractionManager="*res://modules/interaction/InteractionManager.tscn"
+Player="*res://modules/character/player/player.tscn"
 
 [debug]
 
