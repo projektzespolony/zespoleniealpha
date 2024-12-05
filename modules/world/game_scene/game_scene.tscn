@@ -26,4 +26,4 @@ position = Vector2(541, 245)
 base_stats = SubResource("Resource_a0au1")
 
 [node name="BaseItem" parent="." instance=ExtResource("3_krdqu")]
-position = Vector2(818, 303)
+position = Vector2(760, 503)
