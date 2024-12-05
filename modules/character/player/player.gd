@@ -1,7 +1,5 @@
 extends Character
 
-class_name Player
-
 var player_input: PlayerInput
 
 func _init():
