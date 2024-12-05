@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 		#positioning the label
 		label.text = base_text + active_areas[0].interaction_name
 		label.global_position = active_areas[0].global_position #show above active area
-		label.global_position.y -= 200 #y offset
+		label.global_position.y -= 50 #y offset
 		label.global_position.x -= label.size.x/2 #center the text
 		label.show()
 	else:

@@ -15,6 +15,46 @@ var ranged_attack_damage_modifier: float
 var ranged_attack_speed_modifier: float
 var speed_modifier: float
 
+# Setters
+func set_health(value: int) -> void:
+	health = clamp(value, 0, max_health)
+
+func set_max_health(value: int) -> void:
+	max_health = max(value, 1)
+
+func set_melee_attack_damage(value: float) -> void:
+	melee_attack_damage = max(value, 0.1)
+
+func set_melee_attack_speed(value: float) -> void:
+	melee_attack_speed = max(value, 0.1)
+
+func set_ranged_attack_damage(value: float) -> void:
+	ranged_attack_damage = max(value, 0.1)
+
+func set_ranged_attack_speed(value: float) -> void:
+	ranged_attack_speed = max(value, 0.1)
+
+func set_speed(value: float) -> void:
+	speed = max(value, 0.1)
+
+func set_damage_reduction(value: float) -> void:
+	damage_reduction = max(value, 1.0)  # Avoid division by zero
+
+# Modifiers Setters
+func set_melee_attack_damage_modifier(value: float) -> void:
+	melee_attack_damage_modifier = value
+
+func set_melee_attack_speed_modifier(value: float) -> void:
+	melee_attack_speed_modifier = value
+
+func set_ranged_attack_damage_modifier(value: float) -> void:
+	ranged_attack_damage_modifier = value
+
+func set_ranged_attack_speed_modifier(value: float) -> void:
+	ranged_attack_speed_modifier = value
+
+func set_speed_modifier(value: float) -> void:
+	speed_modifier = value
 
 func initialize(stats: initialStats):
 	#health
