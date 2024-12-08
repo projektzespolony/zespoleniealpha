@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4bwfp1w6jwwn"]
+
+[ext_resource type="Script" path="res://modules/character/player/player.gd" id="1_aveaj"]
+[ext_resource type="PackedScene" uid="uid://dag67nytucxxc" path="res://modules/character/character.tscn" id="1_lhhq2"]
+[ext_resource type="Script" path="res://modules/character/stats/initialStats.gd" id="3_eaehl"]
+[ext_resource type="PackedScene" uid="uid://bqu30g2n6e771" path="res://modules/weapons/stapler/stapler.tscn" id="3_gkrvg"]
+[ext_resource type="PackedScene" uid="uid://djq5rm3tytj5m" path="res://modules/weapons/stapler/staple.tscn" id="5_tyfr0"]
+
+[sub_resource type="Resource" id="Resource_xhy3y"]
+script = ExtResource("3_eaehl")
+max_health = 10
+speed = 500.0
+melee_attack_damage = 5.0
+melee_attack_speed = 2.0
+ranged_attack_damage = 3.0
+ranged_attack_speed = 2.0
+melee_attack_damage_modifier = 1.0
+melee_attack_speed_modifier = 1.0
+ranged_attack_damage_modifier = 1.0
+ranged_attack_speed_modifier = 1.0
+speed_modifier = 1.0
+damage_reduction_modifier = 1.0
+
+[node name="player" groups=["player"] instance=ExtResource("1_lhhq2")]
+script = ExtResource("1_aveaj")
+base_stats = SubResource("Resource_xhy3y")
+
+[node name="Stapler" parent="." index="3" instance=ExtResource("3_gkrvg")]
+position = Vector2(111, 3)
+scale = Vector2(0.5, 0.5)
+staple = ExtResource("5_tyfr0")

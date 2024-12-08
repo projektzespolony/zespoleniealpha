@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx3m2865fnrtv"]
+
+[ext_resource type="PackedScene" uid="uid://dag67nytucxxc" path="res://modules/character/character.tscn" id="1_84j5e"]
+
+[node name="Franke" instance=ExtResource("1_84j5e")]
+collision_layer = 8
