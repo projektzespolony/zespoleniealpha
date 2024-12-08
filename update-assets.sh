@@ -25,11 +25,20 @@ done
 
 command -v git >/dev/null || fatal "git command is not available. Please install git and try again (apt install git)"
 
-run_command cd "$(git rev-parse --show-toplevel)" || fatal "Failed to enter the main repository root directory"
+main_repo_path="$(git rev-parse --show-superproject-working-tree)"
+if [ -z "$main_repo_path" ]; then
+	main_repo_path="$(git rev-parse --show-toplevel)"
+fi
+
+run_command cd "$main_repo_path" || fatal "Failed to enter the main repository root directory"
 
 current_branch="$(git rev-parse --abbrev-ref HEAD)"
 if [ "$current_branch" = "main" ]; then
 	fatal "You are on the main branch. You should create your own branch first before making changes."
+fi
+
+if ! git diff --cached --exit-code -- . ':(exclude)assets' >/dev/null; then
+	fatal "There are already staged changes outside the assets directory. Please commit or stash them before running this script. Run git status for more info"
 fi
 
 run_command git submodule update --init || fatal "Failed to initialize and update git submodules"
@@ -39,7 +48,7 @@ run_command git pull origin main || nonfatal "Failed to pull latest changes from
 
 changed_filenames="$(git status --porcelain | cut -c4- | grep -v '\.import$' | sed 's/.*\///')"
 
-run_: git add . || fatal "Failed to add changes in assets submodule"
+run_command git add . || fatal "Failed to add changes in assets submodule"
 
 commit_message="Update assets"
 if [ -n "$changed_filenames" ]; then
