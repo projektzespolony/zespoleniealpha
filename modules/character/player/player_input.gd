@@ -1,6 +1,5 @@
-extends Node
-
 class_name PlayerInput
+extends Node
 
 var player: Character
 
@@ -25,5 +24,6 @@ func handle_input(delta):
 		* WorldContants.MOVEMENT_SPEED_MULTIPLIER
 		* delta
 	)
+
 	player.velocity = velocity
 	player.move_and_slide()

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://modules/items/base_item/base_item.gd" id="1_my81q"]
 [ext_resource type="Texture2D" uid="uid://bfkrsjaaucnr" path="res://assets/meta/icon.svg" id="2_63paa"]
-[ext_resource type="PackedScene" uid="uid://bwfdemvkr7rnn" path="res://modules/interaction/interaction area/interaction_area.tscn" id="3_v7t6r"]
+[ext_resource type="PackedScene" uid="uid://bwfdemvkr7rnn" path="res://modules/interaction/interaction_area/interaction_area.tscn" id="3_v7t6r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cfuvl"]
 radius = 163.049

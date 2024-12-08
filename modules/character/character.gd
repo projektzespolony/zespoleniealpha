@@ -1,5 +1,5 @@
-extends CharacterBody2D
 class_name Character
+extends CharacterBody2D
 
 @export var base_stats: initialStats
 @onready var stats = $Stats

@@ -1,3 +1,2 @@
-extends Character
-
 class_name Franke
+extends Character

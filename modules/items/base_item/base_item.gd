@@ -5,7 +5,8 @@ extends Node2D
 
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
-	#nowa funkcja dla interackji parametry: (kto ma funkcje, 99% self, nazwa funkcji)
+	# new function for interaction
+	# parameters: who has the function, 99% self, function name
 
 
 func _on_interact():

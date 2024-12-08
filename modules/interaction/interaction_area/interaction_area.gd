@@ -1,9 +1,9 @@
-extends Area2D
 class_name InteractionArea
+extends Area2D
 
 @export var interaction_name: String = "interact"
 
-#Callable przechowuje funkcje, nadpisywane przy inheritance
+# Callable stores functions, overridden during inheritance
 var interact: Callable = func(): print("ITEM: Interacted")
 
 
