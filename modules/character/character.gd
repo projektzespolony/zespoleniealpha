@@ -2,7 +2,7 @@ class_name Character
 extends CharacterBody2D
 
 @export var base_stats: initialStats
-@onready var stats = $Stats
+@onready var stats: Node = $Stats
 
 
 func _ready() -> void:
@@ -22,5 +22,5 @@ func is_alive() -> bool:
 	return stats.health > 0
 
 
-func get_movement_speed_modifier():
+func get_movement_speed_modifier() -> float:
 	return ((stats.speed) / 1000 + 0.5) * stats.speed_modifier

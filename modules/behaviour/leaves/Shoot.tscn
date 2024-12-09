@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cphjpoa4lm4hw"]
+
+[ext_resource type="Script" path="res://modules/behaviour/leaves/shoot.gd" id="1_4530t"]
+
+[node name="Shoot" type="Node"]
+script = ExtResource("1_4530t")

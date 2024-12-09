@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://dxqegu1j1e77m"]
+
+[ext_resource type="Script" path="res://modules/behaviour/beeTree.gd" id="1_ra0ti"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/composites/sequence.gd" id="2_jdtl3"]
+[ext_resource type="PackedScene" uid="uid://dpu61b3ic3wcx" path="res://modules/behaviour/conditions/IsPlayerWithinArea.tscn" id="3_obars"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/composites/selector.gd" id="4_8utdy"]
+[ext_resource type="PackedScene" uid="uid://cphjpoa4lm4hw" path="res://modules/behaviour/leaves/Shoot.tscn" id="4_gggyw"]
+[ext_resource type="PackedScene" uid="uid://51w1svm0llkn" path="res://modules/behaviour/conditions/canShoot.tscn" id="4_iy2m8"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/decorators/inverter.gd" id="7_38njd"]
+[ext_resource type="PackedScene" uid="uid://dfavcrob2e0e0" path="res://modules/behaviour/leaves/reload.tscn" id="8_1ynll"]
+
+[node name="FrankeAI" type="Node"]
+script = ExtResource("1_ra0ti")
+custom_monitor = true
+
+[node name="SelectorComposite" type="Node" parent="."]
+script = ExtResource("4_8utdy")
+
+[node name="InverterDecorator" type="Node" parent="SelectorComposite"]
+script = ExtResource("7_38njd")
+
+[node name="IsPlayerWithinArea" parent="SelectorComposite/InverterDecorator" instance=ExtResource("3_obars")]
+
+[node name="ShootAtCloseEnemy" type="Node" parent="SelectorComposite"]
+script = ExtResource("2_jdtl3")
+
+[node name="CanShoot" parent="SelectorComposite/ShootAtCloseEnemy" instance=ExtResource("4_iy2m8")]
+
+[node name="Shoot" parent="SelectorComposite/ShootAtCloseEnemy" instance=ExtResource("4_gggyw")]
+
+[node name="Reload" type="Node" parent="SelectorComposite"]
+script = ExtResource("2_jdtl3")
+
+[node name="InverterDecorator" type="Node" parent="SelectorComposite/Reload"]
+script = ExtResource("7_38njd")
+
+[node name="CanShoot" parent="SelectorComposite/Reload/InverterDecorator" instance=ExtResource("4_iy2m8")]
+
+[node name="Reload" parent="SelectorComposite/Reload" instance=ExtResource("8_1ynll")]

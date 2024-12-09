@@ -17,7 +17,7 @@ var ranged_attack_speed_modifier: float
 var speed_modifier: float
 
 
-func initialize(stats: initialStats):
+func initialize(stats: initialStats) -> void:
 	# Health
 	max_health = stats.max_health
 	health = max_health
@@ -46,7 +46,7 @@ func initialize(stats: initialStats):
 	ranged_attack_speed_modifier = stats.ranged_attack_speed_modifier
 
 
-func take_dmg(amount: int):
+func take_dmg(amount: int) -> void:
 	health -= int(amount / damage_reduction)
 
 

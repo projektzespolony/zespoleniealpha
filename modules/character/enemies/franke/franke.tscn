@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bx3m2865fnrtv"]
+[gd_scene load_steps=4 format=3 uid="uid://bx3m2865fnrtv"]
 
 [ext_resource type="PackedScene" uid="uid://dag67nytucxxc" path="res://modules/character/character.tscn" id="1_84j5e"]
+[ext_resource type="Script" path="res://modules/character/enemies/franke/franke.gd" id="2_te8co"]
+[ext_resource type="PackedScene" uid="uid://dxqegu1j1e77m" path="res://modules/behaviour/FrankeAI.tscn" id="3_fen2j"]
 
 [node name="Franke" instance=ExtResource("1_84j5e")]
 collision_layer = 8
+script = ExtResource("2_te8co")
+
+[node name="FrankeAi" parent="." index="3" node_paths=PackedStringArray("actor") instance=ExtResource("3_fen2j")]
+tick_rate = 10
+actor = NodePath("..")
