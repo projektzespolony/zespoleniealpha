@@ -24,6 +24,10 @@ Player="*res://modules/character/player/player.tscn"
 
 gdscript/warnings/untyped_declaration=1
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/beehave/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
