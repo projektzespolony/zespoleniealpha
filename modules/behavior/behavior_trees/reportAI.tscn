@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://addons/beehave/nodes/beehave_tree.gd" id="1_xh1vh"]
 [ext_resource type="Script" path="res://addons/beehave/nodes/composites/sequence.gd" id="2_x2fxs"]
-[ext_resource type="PackedScene" uid="uid://dpu61b3ic3wcx" path="res://modules/behaviour/conditions/isPlayerWithinArea.tscn" id="3_nld01"]
-[ext_resource type="PackedScene" uid="uid://q0jaeeoj1tor" path="res://modules/behaviour/leaves/chargeAtPlayer.tscn" id="4_asmcb"]
-[ext_resource type="PackedScene" uid="uid://csritmdmd457o" path="res://modules/behaviour/conditions/isPlayerTooClose.tscn" id="5_nsx0b"]
-[ext_resource type="PackedScene" uid="uid://bto1tc35dioos" path="res://modules/behaviour/leaves/explode.tscn" id="6_xbh1k"]
+[ext_resource type="PackedScene" uid="uid://dpu61b3ic3wcx" path="res://modules/behavior/conditions/IsPlayerWithinArea.tscn" id="3_nld01"]
+[ext_resource type="PackedScene" uid="uid://q0jaeeoj1tor" path="res://modules/behavior/leaves/chargeAtPlayer.tscn" id="4_asmcb"]
+[ext_resource type="PackedScene" uid="uid://csritmdmd457o" path="res://modules/behavior/conditions/IsPlayerTooClose.tscn" id="5_nsx0b"]
+[ext_resource type="PackedScene" uid="uid://bto1tc35dioos" path="res://modules/behavior/leaves/explode.tscn" id="6_xbh1k"]
 
 [node name="Sprawozdanie" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_xh1vh")

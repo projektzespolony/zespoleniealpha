@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://c8sv6cr7h4she"]
 
-[ext_resource type="Script" path="res://modules/character/enemies/sprawozdanie/sprawozdanie.gd" id="1_apcqr"]
+[ext_resource type="Script" path="res://modules/character/enemies/report/report.gd" id="1_apcqr"]
 [ext_resource type="PackedScene" uid="uid://dag67nytucxxc" path="res://modules/character/character.tscn" id="1_kyn4g"]
 [ext_resource type="Script" path="res://modules/character/stats/initialStats.gd" id="2_i61f8"]
-[ext_resource type="PackedScene" uid="uid://be6uxk42uhwk6" path="res://modules/behaviour/behaviour_trees/sprawozdanieAI.tscn" id="3_bhl3w"]
+[ext_resource type="PackedScene" uid="uid://be6uxk42uhwk6" path="res://modules/behavior/behavior_trees/reportAI.tscn" id="3_bhl3w"]
 
 [sub_resource type="Resource" id="Resource_nm7gy"]
 script = ExtResource("2_i61f8")
@@ -23,15 +23,15 @@ damage_reduction_modifier = 1.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_ugjbe"]
 radius = 124.016
 
-[node name="Sprawozdanie" instance=ExtResource("1_kyn4g")]
+[node name="Report" instance=ExtResource("1_kyn4g")]
 collision_layer = 8
 script = ExtResource("1_apcqr")
 base_stats = SubResource("Resource_nm7gy")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="3"]
 
-[node name="Sprawozdanie" parent="." index="4" node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("3_bhl3w")]
-blackboard = NodePath("@Node@57922")
+[node name="ReportAI" parent="." index="4" node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("3_bhl3w")]
+blackboard = NodePath("@Node@21352")
 actor = NodePath("..")
 
 [node name="ExplosionHitbox" type="Area2D" parent="." index="5"]

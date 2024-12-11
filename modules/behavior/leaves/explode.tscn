@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bto1tc35dioos"]
 
-[ext_resource type="Script" path="res://modules/behaviour/leaves/explode.gd" id="1_eb0bp"]
+[ext_resource type="Script" path="res://modules/behavior/leaves/explode.gd" id="1_eb0bp"]
 
 [node name="Explode" type="Node"]
 script = ExtResource("1_eb0bp")
