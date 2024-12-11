@@ -1,6 +1,7 @@
 class_name Franke extends Character
 
-const ATTACK_RANGE: int = 500
+const ATTACK_RANGE: float = 500
+const TOO_CLOSE_RANGE: float = 300
 
 var shoot_cooldown: bool = false
 @onready var navigation_agent_2d: NavigationAgent2D = $NavigationAgent2D
@@ -10,8 +11,12 @@ func get_distance_from_player() -> float:
 	return self.global_position.distance_to(Player.global_position)
 
 
-func get_attack_range() -> int:
+func get_attack_range() -> float:
 	return ATTACK_RANGE
+
+
+func get_too_close_range() -> float:
+	return TOO_CLOSE_RANGE
 
 
 func can_shoot() -> bool:
