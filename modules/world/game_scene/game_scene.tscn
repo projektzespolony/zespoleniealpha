@@ -1,32 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce5jdu83m0hw8"]
+[gd_scene load_steps=4 format=3 uid="uid://ce5jdu83m0hw8"]
 
 [ext_resource type="PackedScene" uid="uid://bx3m2865fnrtv" path="res://modules/character/enemies/franke/franke.tscn" id="1_dtcjk"]
-[ext_resource type="Script" path="res://modules/character/stats/initialStats.gd" id="3_6jtde"]
 [ext_resource type="PackedScene" uid="uid://b76ofqud6ia58" path="res://modules/items/base_item/base_item.tscn" id="3_krdqu"]
 
-[sub_resource type="Resource" id="Resource_a0au1"]
-script = ExtResource("3_6jtde")
-max_health = 10
-speed = 500.0
-melee_attack_damage = 5.0
-melee_attack_speed = 2.0
-ranged_attack_damage = 3.0
-ranged_attack_speed = 2.0
-melee_attack_damage_modifier = 1.0
-melee_attack_speed_modifier = 1.0
-ranged_attack_damage_modifier = 1.0
-ranged_attack_speed_modifier = 1.0
-speed_modifier = 1.0
-damage_reduction_modifier = 1.0
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_2k5pc"]
+vertices = PackedVector2Array(1122.8, 621.93, 74.9531, 631.188, 78.9219, 67.6328, 1124.79, 67.6328)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(68.996, 57.6314, 1134.83, 57.6314, 1132.77, 631.85, 64.8768, 641.28)])
 
 [node name="GameScene" type="Node2D"]
+position = Vector2(4, -4)
 
 [node name="Franke" parent="." instance=ExtResource("1_dtcjk")]
 position = Vector2(541, 245)
-base_stats = SubResource("Resource_a0au1")
 
 [node name="BaseItem" parent="." instance=ExtResource("3_krdqu")]
 position = Vector2(619, 488)
 
 [node name="BaseItem2" parent="." instance=ExtResource("3_krdqu")]
 position = Vector2(894, 488)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(0.485, 0.485)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Camera2D" groups=["navigitation_area"]]
+position = Vector2(-2, -1)
+scale = Vector2(0.971071, 0.954341)
+navigation_polygon = SubResource("NavigationPolygon_2k5pc")
