@@ -33,7 +33,11 @@ func shoot() -> void:
 	get_tree().get_root().add_child(projectile)
 	projectile.global_position = global_position
 	shoot_cooldown = true
-	await get_tree().create_timer(1.0).timeout
+	await (
+		get_tree()
+		. create_timer(1.0 / (stats.ranged_attack_speed * stats.ranged_attack_speed_modifier))
+		. timeout
+	)
 	shoot_cooldown = false
 
 
