@@ -15,7 +15,8 @@
 
 [node name="MicroBiologist" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_8dk5s")
-blackboard = NodePath("@Node@27536")
+tick_rate = 10
+blackboard = NodePath("@Node@76353")
 actor = NodePath("")
 
 [node name="SelectorComposite" type="Node" parent="."]
@@ -26,7 +27,10 @@ script = ExtResource("3_1jacy")
 
 [node name="IsPlayerTooClose" parent="SelectorComposite/SequenceComposite" instance=ExtResource("3_gp8vv")]
 
-[node name="KeepDistance" parent="SelectorComposite/SequenceComposite" instance=ExtResource("5_plmsy")]
+[node name="InverterDecorator" type="Node" parent="SelectorComposite/SequenceComposite"]
+script = ExtResource("3_6b8mq")
+
+[node name="KeepDistance" parent="SelectorComposite/SequenceComposite/InverterDecorator" instance=ExtResource("5_plmsy")]
 
 [node name="MoveCloser" type="Node" parent="SelectorComposite"]
 script = ExtResource("3_1jacy")

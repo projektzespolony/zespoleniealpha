@@ -9,7 +9,8 @@
 
 [node name="Sprawozdanie" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_xh1vh")
-blackboard = NodePath("@Node@57841")
+tick_rate = 10
+blackboard = NodePath("@Node@69690")
 actor = NodePath("")
 
 [node name="SequenceComposite" type="Node" parent="."]

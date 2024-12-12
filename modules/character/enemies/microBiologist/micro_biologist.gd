@@ -6,6 +6,8 @@ const ATTACK_RANGE: float = 250
 @export var charge_time: float = 2
 var is_charged: bool = false
 @onready var navigation_agent_2d: NavigationAgent2D = $NavigationAgent2D
+@onready var weapon_anchor: Area2D = $WeaponAnchor
+@onready var weapon_hitbox: CollisionShape2D = $"WeaponAnchor/WeaponHitbox"
 
 
 func get_distance_from_player() -> float:
@@ -21,6 +23,7 @@ func get_too_close_range() -> float:
 
 
 func _physics_process(delta: float) -> void:
+	weapon_anchor.look_at(Player.global_position)
 	if !navigation_agent_2d.is_navigation_finished():
 		var direction: Vector2 = to_local(navigation_agent_2d.get_next_path_position()).normalized()
 		print(direction)
@@ -62,6 +65,13 @@ func prepare_charge_attack() -> void:
 
 
 func charged_attack() -> void:
-	#TODO: IMPLEMENT A WEAPON
-	print("TODO: Implement Weapon Attack")
+	weapon_hitbox.disabled = false
 	is_charged = false
+	await get_tree().create_timer(charge_time).timeout
+	weapon_hitbox.disabled = true
+
+
+func _on_weapon_anchor_body_entered(body: Node2D) -> void:
+	if body.has_method("take_damage"):
+		var damage_to_deal: float = stats.melee_attack_damage * stats.melee_attack_damage_modifier
+		body.take_damage(damage_to_deal)

@@ -16,7 +16,7 @@
 [node name="BeehaveTree" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_hypvl")
 tick_rate = 10
-blackboard = NodePath("@Node@17267")
+blackboard = NodePath("@Node@69564")
 actor = NodePath("")
 
 [node name="TargetIsClose" type="Node" parent="."]
