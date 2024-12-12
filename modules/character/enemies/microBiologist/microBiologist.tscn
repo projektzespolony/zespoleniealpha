@@ -28,6 +28,8 @@ charge_time = 2.0
 base_stats = SubResource("Resource_3clgb")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="3"]
+debug_enabled = true
 
-[node name="MicroBiologist" parent="." index="4" node_paths=PackedStringArray("blackboard") instance=ExtResource("3_go4a3")]
-blackboard = NodePath("@Node@21065")
+[node name="MicroBiologist" parent="." index="4" node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("3_go4a3")]
+blackboard = NodePath("@Node@27529")
+actor = NodePath("..")

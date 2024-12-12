@@ -15,8 +15,8 @@
 
 [node name="MicroBiologist" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_8dk5s")
-blackboard = NodePath("@Node@26014")
-actor = NodePath("..")
+blackboard = NodePath("@Node@27536")
+actor = NodePath("")
 
 [node name="SelectorComposite" type="Node" parent="."]
 script = ExtResource("2_wmnrb")

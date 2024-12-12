@@ -1,7 +1,7 @@
 class_name MicroBiologist extends Character
 
 const TARGET_OFFSET: float = 200
-const ATTACK_RANGE: float = 300
+const ATTACK_RANGE: float = 250
 
 @export var charge_time: float = 2
 var is_charged: bool = false
@@ -41,7 +41,7 @@ func move() -> void:
 
 func keep_distance() -> void:
 	var direction_to_player: Vector2 = Player.global_position - global_position
-	var move_direction: Vector2 = direction_to_player.normalized()
+	var move_direction: Vector2 = direction_to_player.normalized() * TARGET_OFFSET
 	var target_position: Vector2 = Player.global_position - move_direction
 	navigation_agent_2d.target_position = target_position
 
