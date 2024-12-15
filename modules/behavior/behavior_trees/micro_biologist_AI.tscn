@@ -1,0 +1,69 @@
+[gd_scene load_steps=13 format=3 uid="uid://buk157ggdp1s1"]
+
+[ext_resource type="Script" path="res://addons/beehave/nodes/beehave_tree.gd" id="1_f131v"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/composites/selector.gd" id="2_v7uvj"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/composites/sequence.gd" id="3_dvbtm"]
+[ext_resource type="PackedScene" uid="uid://csritmdmd457o" path="res://modules/behavior/conditions/is_player_too_close.tscn" id="4_cj4cb"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/decorators/inverter.gd" id="5_kj0pi"]
+[ext_resource type="PackedScene" uid="uid://0ikrlynld0sv" path="res://modules/behavior/leaves/keep_distance.tscn" id="6_wmare"]
+[ext_resource type="PackedScene" uid="uid://dpu61b3ic3wcx" path="res://modules/behavior/conditions/is_player_within_area.tscn" id="7_l6d3g"]
+[ext_resource type="PackedScene" uid="uid://ct3qc2f7ogb2y" path="res://modules/behavior/leaves/move.tscn" id="8_elk3u"]
+[ext_resource type="Script" path="res://modules/behavior/conditions/is_player_within_area.gd" id="9_5iowc"]
+[ext_resource type="PackedScene" uid="uid://dgawj38cdf8cs" path="res://modules/behavior/conditions/is_charged.tscn" id="10_r0x6n"]
+[ext_resource type="PackedScene" uid="uid://cwnpiqrgg28es" path="res://modules/behavior/leaves/prepare_charged_attack.tscn" id="11_m7ytr"]
+[ext_resource type="PackedScene" uid="uid://qgv2kjl76nac" path="res://modules/behavior/leaves/charged_attack.tscn" id="12_sljlg"]
+
+[node name="MicroBiologist" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
+script = ExtResource("1_f131v")
+tick_rate = 10
+blackboard = NodePath("@Node@21101")
+actor = NodePath("")
+
+[node name="SelectorComposite" type="Node" parent="."]
+script = ExtResource("2_v7uvj")
+
+[node name="SequenceComposite" type="Node" parent="SelectorComposite"]
+script = ExtResource("3_dvbtm")
+
+[node name="IsPlayerTooClose" parent="SelectorComposite/SequenceComposite" instance=ExtResource("4_cj4cb")]
+
+[node name="InverterDecorator" type="Node" parent="SelectorComposite/SequenceComposite"]
+script = ExtResource("5_kj0pi")
+
+[node name="KeepDistance" parent="SelectorComposite/SequenceComposite/InverterDecorator" instance=ExtResource("6_wmare")]
+
+[node name="MoveCloser" type="Node" parent="SelectorComposite"]
+script = ExtResource("3_dvbtm")
+
+[node name="InverterDecorator" type="Node" parent="SelectorComposite/MoveCloser"]
+script = ExtResource("5_kj0pi")
+
+[node name="IsPlayerWithinArea" parent="SelectorComposite/MoveCloser/InverterDecorator" instance=ExtResource("7_l6d3g")]
+
+[node name="Move" parent="SelectorComposite/MoveCloser" instance=ExtResource("8_elk3u")]
+
+[node name="AttackLogic" type="Node" parent="SelectorComposite"]
+script = ExtResource("3_dvbtm")
+
+[node name="IsPlayerWithinAttackRange" type="Node" parent="SelectorComposite/AttackLogic"]
+script = ExtResource("9_5iowc")
+
+[node name="SelectorComposite2" type="Node" parent="SelectorComposite/AttackLogic"]
+script = ExtResource("2_v7uvj")
+
+[node name="Charge the Attack" type="Node" parent="SelectorComposite/AttackLogic/SelectorComposite2"]
+script = ExtResource("3_dvbtm")
+
+[node name="NotCharged" type="Node" parent="SelectorComposite/AttackLogic/SelectorComposite2/Charge the Attack"]
+script = ExtResource("5_kj0pi")
+
+[node name="IsCharged" parent="SelectorComposite/AttackLogic/SelectorComposite2/Charge the Attack/NotCharged" instance=ExtResource("10_r0x6n")]
+
+[node name="PrepareChargedAttack" parent="SelectorComposite/AttackLogic/SelectorComposite2/Charge the Attack" instance=ExtResource("11_m7ytr")]
+
+[node name="ChargedAttack" type="Node" parent="SelectorComposite/AttackLogic/SelectorComposite2"]
+script = ExtResource("3_dvbtm")
+
+[node name="IsCharged" parent="SelectorComposite/AttackLogic/SelectorComposite2/ChargedAttack" instance=ExtResource("10_r0x6n")]
+
+[node name="ChargedAttack" parent="SelectorComposite/AttackLogic/SelectorComposite2/ChargedAttack" instance=ExtResource("12_sljlg")]

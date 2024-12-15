@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce5jdu83m0hw8"]
+[gd_scene load_steps=6 format=3 uid="uid://ce5jdu83m0hw8"]
 
 [ext_resource type="PackedScene" uid="uid://c8sv6cr7h4she" path="res://modules/character/enemies/report/report.tscn" id="3_jupa3"]
 [ext_resource type="PackedScene" uid="uid://b76ofqud6ia58" path="res://modules/items/base_item/base_item.tscn" id="3_krdqu"]
-[ext_resource type="PackedScene" uid="uid://cq7cx8nvnnjca" path="res://modules/character/enemies/microBiologist/microBiologist.tscn" id="3_uix3l"]
+[ext_resource type="PackedScene" uid="uid://bx3m2865fnrtv" path="res://modules/character/enemies/franke/franke.tscn" id="3_tp70l"]
+[ext_resource type="PackedScene" uid="uid://cq7cx8nvnnjca" path="res://modules/character/enemies/micro_biologist/micro_biologist.tscn" id="3_uix3l"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_2k5pc"]
 vertices = PackedVector2Array(1122.8, 621.93, 74.9531, 631.188, 78.9219, 67.6328, 1124.79, 67.6328)
@@ -27,8 +28,10 @@ position = Vector2(-2, -1)
 scale = Vector2(0.971071, 0.954341)
 navigation_polygon = SubResource("NavigationPolygon_2k5pc")
 
-[node name="MicroBiologist" parent="Camera2D" instance=ExtResource("3_uix3l")]
-position = Vector2(804, 205)
-
 [node name="Sprawozdanie" parent="." instance=ExtResource("3_jupa3")]
 position = Vector2(1080, 142)
+
+[node name="Franke" parent="." instance=ExtResource("3_tp70l")]
+
+[node name="MicroBiologist" parent="." instance=ExtResource("3_uix3l")]
+position = Vector2(804, 205)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dpu61b3ic3wcx"]
 
-[ext_resource type="Script" path="res://modules/behavior/conditions/isPlayerWithinArea.gd" id="1_pmqvp"]
+[ext_resource type="Script" path="res://modules/behavior/conditions/is_player_within_area.gd" id="1_pmqvp"]
 
 [node name="IsPlayerWithinArea" type="Node"]
 script = ExtResource("1_pmqvp")

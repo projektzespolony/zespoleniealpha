@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://qgv2kjl76nac"]
 
-[ext_resource type="Script" path="res://modules/behavior/leaves/chargedAttack.gd" id="1_wxywl"]
+[ext_resource type="Script" path="res://modules/behavior/leaves/charged_attack.gd" id="1_wxywl"]
 
 [node name="ChargedAttack" type="Node"]
 script = ExtResource("1_wxywl")

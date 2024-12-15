@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://modules/character/enemies/report/report.gd" id="1_apcqr"]
 [ext_resource type="PackedScene" uid="uid://dag67nytucxxc" path="res://modules/character/character.tscn" id="1_kyn4g"]
-[ext_resource type="Script" path="res://modules/character/stats/initialStats.gd" id="2_i61f8"]
-[ext_resource type="PackedScene" uid="uid://be6uxk42uhwk6" path="res://modules/behavior/behavior_trees/reportAI.tscn" id="3_bhl3w"]
+[ext_resource type="Script" path="res://modules/character/stats/initial_stats.gd" id="2_i61f8"]
+[ext_resource type="PackedScene" uid="uid://be6uxk42uhwk6" path="res://modules/behavior/behavior_trees/report_AI.tscn" id="3_bhl3w"]
 
 [sub_resource type="Resource" id="Resource_nm7gy"]
 script = ExtResource("2_i61f8")

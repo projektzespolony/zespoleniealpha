@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://0ikrlynld0sv"]
+
+[ext_resource type="Script" path="res://modules/behavior/leaves/keep_distance.gd" id="1_tuixq"]
+
+[node name="KeepDistance" type="Node"]
+script = ExtResource("1_tuixq")

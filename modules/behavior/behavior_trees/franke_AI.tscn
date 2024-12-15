@@ -1,0 +1,62 @@
+[gd_scene load_steps=13 format=3 uid="uid://dxqegu1j1e77m"]
+
+[ext_resource type="Script" path="res://addons/beehave/nodes/beehave_tree.gd" id="1_ve2nj"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/composites/selector.gd" id="2_kk6c6"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/composites/sequence.gd" id="3_eatty"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/decorators/inverter.gd" id="4_844s1"]
+[ext_resource type="PackedScene" uid="uid://dpu61b3ic3wcx" path="res://modules/behavior/conditions/is_player_within_area.tscn" id="5_xde3f"]
+[ext_resource type="PackedScene" uid="uid://ct3qc2f7ogb2y" path="res://modules/behavior/leaves/move.tscn" id="6_ie82q"]
+[ext_resource type="PackedScene" uid="uid://51w1svm0llkn" path="res://modules/behavior/conditions/can_shoot.tscn" id="7_8g0aw"]
+[ext_resource type="PackedScene" uid="uid://cphjpoa4lm4hw" path="res://modules/behavior/leaves/shoot.tscn" id="8_g0pu4"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/decorators/failer.gd" id="9_we32i"]
+[ext_resource type="PackedScene" uid="uid://csritmdmd457o" path="res://modules/behavior/conditions/is_player_too_close.tscn" id="10_jb2p2"]
+[ext_resource type="PackedScene" uid="uid://cnxldrqigla0c" path="res://modules/behavior/leaves/move_away.tscn" id="11_6tjdb"]
+[ext_resource type="PackedScene" uid="uid://dfavcrob2e0e0" path="res://modules/behavior/leaves/reload.tscn" id="12_s1n63"]
+
+[node name="BeehaveTree" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
+script = ExtResource("1_ve2nj")
+tick_rate = 10
+blackboard = NodePath("@Node@21145")
+actor = NodePath("")
+
+[node name="TargetIsClose" type="Node" parent="."]
+script = ExtResource("2_kk6c6")
+
+[node name="ComeCloser" type="Node" parent="TargetIsClose"]
+script = ExtResource("3_eatty")
+
+[node name="InverterDecorator" type="Node" parent="TargetIsClose/ComeCloser"]
+script = ExtResource("4_844s1")
+
+[node name="IsPlayerWithinArea" parent="TargetIsClose/ComeCloser/InverterDecorator" instance=ExtResource("5_xde3f")]
+
+[node name="Move" parent="TargetIsClose/ComeCloser" instance=ExtResource("6_ie82q")]
+
+[node name="ShootAtCloseEnemy" type="Node" parent="TargetIsClose"]
+script = ExtResource("3_eatty")
+
+[node name="IsPlayerWithinArea" parent="TargetIsClose/ShootAtCloseEnemy" instance=ExtResource("5_xde3f")]
+
+[node name="CanShoot" parent="TargetIsClose/ShootAtCloseEnemy" instance=ExtResource("7_8g0aw")]
+
+[node name="Shoot" parent="TargetIsClose/ShootAtCloseEnemy" instance=ExtResource("8_g0pu4")]
+
+[node name="AlwaysFailDecorator" type="Node" parent="TargetIsClose"]
+script = ExtResource("9_we32i")
+
+[node name="RunAway" type="Node" parent="TargetIsClose/AlwaysFailDecorator"]
+script = ExtResource("3_eatty")
+
+[node name="IsPlayerTooClose" parent="TargetIsClose/AlwaysFailDecorator/RunAway" instance=ExtResource("10_jb2p2")]
+
+[node name="MoveAway" parent="TargetIsClose/AlwaysFailDecorator/RunAway" instance=ExtResource("11_6tjdb")]
+
+[node name="Reload" type="Node" parent="TargetIsClose"]
+script = ExtResource("3_eatty")
+
+[node name="InverterDecorator" type="Node" parent="TargetIsClose/Reload"]
+script = ExtResource("4_844s1")
+
+[node name="CanShoot" parent="TargetIsClose/Reload/InverterDecorator" instance=ExtResource("7_8g0aw")]
+
+[node name="Reload" parent="TargetIsClose/Reload" instance=ExtResource("12_s1n63")]

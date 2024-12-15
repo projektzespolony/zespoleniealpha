@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cwnpiqrgg28es"]
 
-[ext_resource type="Script" path="res://modules/behavior/leaves/prepareChargedAttack.gd" id="1_pkajo"]
+[ext_resource type="Script" path="res://modules/behavior/leaves/prepare_charged_attack.gd" id="1_pkajo"]
 
 [node name="PrepareChargedAttack" type="Node"]
 script = ExtResource("1_pkajo")

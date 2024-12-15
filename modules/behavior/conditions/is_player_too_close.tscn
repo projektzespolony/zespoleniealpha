@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://csritmdmd457o"]
 
-[ext_resource type="Script" path="res://modules/behavior/conditions/isPlayerTooClose.gd" id="1_5l1hf"]
+[ext_resource type="Script" path="res://modules/behavior/conditions/is_player_too_close.gd" id="1_5l1hf"]
 
 [node name="IsPlayerTooClose" type="Node"]
 script = ExtResource("1_5l1hf")

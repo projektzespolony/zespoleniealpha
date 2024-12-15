@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://51w1svm0llkn"]
 
-[ext_resource type="Script" path="res://modules/behavior/conditions/canShoot.gd" id="1_6v7ix"]
+[ext_resource type="Script" path="res://modules/behavior/conditions/can_shoot.gd" id="1_6v7ix"]
 
 [node name="CanShoot" type="Node"]
 script = ExtResource("1_6v7ix")
