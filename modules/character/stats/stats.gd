@@ -84,7 +84,7 @@ func set_speed(value: float) -> void:
 
 
 func set_damage_reduction(value: float) -> void:
-	damage_reduction = max(value, 1.0)  # Avoid division by zero
+	damage_reduction = max(value, 0.1)
 
 
 #

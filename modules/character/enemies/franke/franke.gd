@@ -42,16 +42,14 @@ func shoot() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if !navigation_agent_2d.is_navigation_finished():
-		var direction: Vector2 = to_local(navigation_agent_2d.get_next_path_position()).normalized()
-		print(direction)
-		self.velocity = (
-			direction
-			* get_movement_speed_modifier()
-			* WorldContants.MOVEMENT_SPEED_MULTIPLIER
-			* delta
-		)
-		move_and_slide()
+	if navigation_agent_2d.is_navigation_finished():
+		return
+	var direction: Vector2 = to_local(navigation_agent_2d.get_next_path_position()).normalized()
+	print(direction)
+	self.velocity = (
+		direction * get_movement_speed_modifier() * WorldContants.MOVEMENT_SPEED_MULTIPLIER * delta
+	)
+	move_and_slide()
 
 
 func find_farthest_point_from_player(
@@ -59,8 +57,6 @@ func find_farthest_point_from_player(
 ) -> Vector2:
 	var best_position: Vector2 = global_position
 	var max_distance: float = 0
-
-	# Get the NavigationMap RID from the NavigationAgent2D
 	var nav_map_rid: RID = navigation_agent_2d.get_navigation_map()
 	if nav_map_rid == RID():
 		return best_position
@@ -70,16 +66,12 @@ func find_farthest_point_from_player(
 		var offset: Vector2 = Vector2(cos(angle), sin(angle)) * search_radius
 		var test_position: Vector2 = global_position + offset
 
-		# Find the closest valid point on the navigation mesh
 		var closest_point: Vector2 = NavigationServer2D.map_get_closest_point(
 			nav_map_rid, test_position
 		)
-		if closest_point != Vector2():  # Ensure the point is valid
+		if closest_point != Vector2():
 			var distance_to_player: float = player_position.distance_to(closest_point)
-			# Add a feasibility check for distance to navmesh center
 			var center_distance: float = closest_point.distance_to(global_position)
-
-			# Avoid corners by prioritizing points closer to the navigation mesh's accessible area
 			if distance_to_player > max_distance and center_distance < search_radius * 0.9:
 				max_distance = distance_to_player
 				best_position = closest_point

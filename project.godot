@@ -33,6 +33,7 @@ enabled=PackedStringArray("res://addons/beehave/plugin.cfg")
 [file_customization]
 
 folder_colors={
+"res://addons/": "gray",
 "res://assets/": "orange",
 "res://modules/": "teal"
 }

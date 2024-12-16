@@ -42,8 +42,9 @@ func melee() -> void:
 
 
 func _on_melee_area_body_entered(body: Node2D) -> void:
-	if body.has_method("take_damage"):
-		var damage_to_deal: float = (
-			Player.stats.melee_attack_damage * Player.stats.melee_attack_damage_modifier
-		)
-		body.take_damage(damage_to_deal)
+	if !body.has_method("take_damage"):
+		return
+	var damage_to_deal: float = (
+		Player.stats.melee_attack_damage * Player.stats.melee_attack_damage_modifier
+	)
+	body.take_damage(damage_to_deal)

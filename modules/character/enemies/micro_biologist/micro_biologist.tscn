@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dag67nytucxxc" path="res://modules/character/character.tscn" id="1_48ll4"]
 [ext_resource type="Script" path="res://modules/character/enemies/micro_biologist/micro_biologist.gd" id="2_liblf"]
 [ext_resource type="Script" path="res://modules/character/stats/initial_stats.gd" id="2_vmby6"]
-[ext_resource type="PackedScene" uid="uid://buk157ggdp1s1" path="res://modules/behavior/behavior_trees/micro_biologist_AI.tscn" id="3_go4a3"]
+[ext_resource type="PackedScene" uid="uid://buk157ggdp1s1" path="res://modules/behavior/behavior_trees/micro_biologist_ai.tscn" id="3_go4a3"]
 
 [sub_resource type="Resource" id="Resource_3clgb"]
 script = ExtResource("2_vmby6")
@@ -41,7 +41,7 @@ disabled = true
 debug_enabled = true
 
 [node name="MicroBiologist" parent="." index="5" node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("3_go4a3")]
-blackboard = NodePath("@Node@21303")
+blackboard = NodePath("@Node@19364")
 actor = NodePath("..")
 
 [connection signal="body_entered" from="WeaponAnchor" to="." method="_on_weapon_anchor_body_entered"]

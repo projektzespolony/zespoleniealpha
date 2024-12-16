@@ -1,4 +1,4 @@
-class_name IsCharged extends ConditionLeaf
+class_name IsAttackCharged extends ConditionLeaf
 
 
 func tick(actor: Node, _blackboard: Blackboard) -> int:

@@ -4,6 +4,7 @@ const TARGET_OFFSET: float = 200
 const ATTACK_RANGE: float = 250
 
 @export var charge_time: float = 2
+
 var is_charged: bool = false
 @onready var navigation_agent_2d: NavigationAgent2D = $NavigationAgent2D
 @onready var weapon_anchor: Area2D = $WeaponAnchor
@@ -24,16 +25,14 @@ func get_too_close_range() -> float:
 
 func _physics_process(delta: float) -> void:
 	weapon_anchor.look_at(Player.global_position)
-	if !navigation_agent_2d.is_navigation_finished():
-		var direction: Vector2 = to_local(navigation_agent_2d.get_next_path_position()).normalized()
-		print(direction)
-		self.velocity = (
-			direction
-			* get_movement_speed_modifier()
-			* WorldContants.MOVEMENT_SPEED_MULTIPLIER
-			* delta
-		)
-		move_and_slide()
+	if navigation_agent_2d.is_navigation_finished():
+		return
+	var direction: Vector2 = to_local(navigation_agent_2d.get_next_path_position()).normalized()
+	print(direction)
+	self.velocity = (
+		direction * get_movement_speed_modifier() * WorldContants.MOVEMENT_SPEED_MULTIPLIER * delta
+	)
+	move_and_slide()
 
 
 func move() -> void:
@@ -72,6 +71,7 @@ func charged_attack() -> void:
 
 
 func _on_weapon_anchor_body_entered(body: Node2D) -> void:
-	if body.has_method("take_damage"):
-		var damage_to_deal: float = stats.melee_attack_damage * stats.melee_attack_damage_modifier
-		body.take_damage(damage_to_deal)
+	if !body.has_method("take_damage"):
+		return
+	var damage_to_deal: float = stats.melee_attack_damage * stats.melee_attack_damage_modifier
+	body.take_damage(damage_to_deal)

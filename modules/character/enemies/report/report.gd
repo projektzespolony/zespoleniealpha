@@ -1,4 +1,4 @@
-class_name Sprawozdanie extends Character
+class_name Report extends Character
 
 const ATTACK_RANGE: float = 350
 const TOO_CLOSE_RANGE: float = 250
@@ -20,19 +20,17 @@ func get_too_close_range() -> float:
 
 
 func _physics_process(delta: float) -> void:
-	if !navigation_agent_2d.is_navigation_finished():
-		var direction: Vector2 = to_local(navigation_agent_2d.get_next_path_position()).normalized()
-		print(direction)
-		self.velocity = (
-			direction
-			* get_movement_speed_modifier()
-			* WorldContants.MOVEMENT_SPEED_MULTIPLIER
-			* delta
-		)
-		move_and_slide()
+	if navigation_agent_2d.is_navigation_finished():
+		return
+	var direction: Vector2 = to_local(navigation_agent_2d.get_next_path_position()).normalized()
+	print(direction)
+	self.velocity = (
+		direction * get_movement_speed_modifier() * WorldContants.MOVEMENT_SPEED_MULTIPLIER * delta
+	)
+	move_and_slide()
 
 
-func charge() -> void:
+func charge_at_player() -> void:
 	navigation_agent_2d.target_position = Player.global_position
 
 
@@ -44,6 +42,7 @@ func explode() -> void:
 
 
 func _on_explosion_hitbox_body_entered(body: Node2D) -> void:
-	if body.has_method("take_damage"):
-		var damage_to_deal: float = stats.melee_attack_damage * stats.melee_attack_damage_modifier
-		body.take_damage(damage_to_deal)
+	if !body.has_method("take_damage"):
+		return
+	var damage_to_deal: float = stats.melee_attack_damage * stats.melee_attack_damage_modifier
+	body.take_damage(damage_to_deal)

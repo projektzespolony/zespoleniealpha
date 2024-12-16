@@ -16,8 +16,9 @@ func register_area(area: InteractionArea) -> void:
 func unregister_area(area: InteractionArea) -> void:
 	print("INTERACTION_MANAGER: Unregistered an area")
 	var index: int = active_areas.find(area)
-	if index != -1:
-		active_areas.remove_at(index)
+	if index == -1:
+		return
+	active_areas.remove_at(index)
 
 
 func _process(_delta: float) -> void:
