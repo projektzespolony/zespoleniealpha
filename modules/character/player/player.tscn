@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://modules/character/player/player.gd" id="1_aveaj"]
 [ext_resource type="PackedScene" uid="uid://dag67nytucxxc" path="res://modules/character/character.tscn" id="1_lhhq2"]
-[ext_resource type="Script" path="res://modules/character/stats/initialStats.gd" id="3_eaehl"]
+[ext_resource type="Script" path="res://modules/character/stats/initial_stats.gd" id="3_eaehl"]
 [ext_resource type="PackedScene" uid="uid://bqu30g2n6e771" path="res://modules/weapons/stapler/stapler.tscn" id="3_gkrvg"]
 [ext_resource type="PackedScene" uid="uid://djq5rm3tytj5m" path="res://modules/weapons/stapler/staple.tscn" id="5_tyfr0"]
 

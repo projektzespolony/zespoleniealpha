@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfavcrob2e0e0"]
+
+[ext_resource type="Script" path="res://modules/behavior/leaves/reload.gd" id="1_dih26"]
+
+[node name="Reload" type="Node"]
+script = ExtResource("1_dih26")

@@ -1,6 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://bx3m2865fnrtv"]
+[gd_scene load_steps=6 format=3 uid="uid://bx3m2865fnrtv"]
 
 [ext_resource type="PackedScene" uid="uid://dag67nytucxxc" path="res://modules/character/character.tscn" id="1_84j5e"]
+[ext_resource type="Script" path="res://modules/character/enemies/franke/franke.gd" id="2_te8co"]
+[ext_resource type="PackedScene" uid="uid://dxqegu1j1e77m" path="res://modules/behavior/behavior_trees/franke_ai.tscn" id="3_fen2j"]
+[ext_resource type="Script" path="res://modules/character/stats/initial_stats.gd" id="3_yy2in"]
+
+[sub_resource type="Resource" id="Resource_0xi5u"]
+script = ExtResource("3_yy2in")
+max_health = 10
+speed = 1.0
+melee_attack_damage = 5.0
+melee_attack_speed = 2.0
+ranged_attack_damage = 3.0
+ranged_attack_speed = 5.0
+melee_attack_damage_modifier = 1.0
+melee_attack_speed_modifier = 1.0
+ranged_attack_damage_modifier = 1.0
+ranged_attack_speed_modifier = 1.0
+speed_modifier = 1.0
+damage_reduction_modifier = 1.0
 
 [node name="Franke" instance=ExtResource("1_84j5e")]
 collision_layer = 8
+script = ExtResource("2_te8co")
+base_stats = SubResource("Resource_0xi5u")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="3"]
+path_desired_distance = 10.0
+avoidance_enabled = true
+radius = 100.0
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(0.488872, 4.35102e-05, 0.410768, 1)
+
+[node name="FrankeAi" parent="." index="4" node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("3_fen2j")]
+blackboard = NodePath("@Node@21598")
+actor = NodePath("..")

@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8sv6cr7h4she"]
+
+[ext_resource type="Script" path="res://modules/character/enemies/report/report.gd" id="1_apcqr"]
+[ext_resource type="PackedScene" uid="uid://dag67nytucxxc" path="res://modules/character/character.tscn" id="1_kyn4g"]
+[ext_resource type="Script" path="res://modules/character/stats/initial_stats.gd" id="2_i61f8"]
+[ext_resource type="PackedScene" uid="uid://be6uxk42uhwk6" path="res://modules/behavior/behavior_trees/report_ai.tscn" id="3_bhl3w"]
+
+[sub_resource type="Resource" id="Resource_nm7gy"]
+script = ExtResource("2_i61f8")
+max_health = 1
+speed = 2.0
+melee_attack_damage = 10.0
+melee_attack_speed = 2.0
+ranged_attack_damage = 3.0
+ranged_attack_speed = 2.0
+melee_attack_damage_modifier = 1.0
+melee_attack_speed_modifier = 1.0
+ranged_attack_damage_modifier = 1.0
+ranged_attack_speed_modifier = 1.0
+speed_modifier = 1.0
+damage_reduction_modifier = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ugjbe"]
+radius = 124.016
+
+[node name="Report" instance=ExtResource("1_kyn4g")]
+collision_layer = 8
+script = ExtResource("1_apcqr")
+base_stats = SubResource("Resource_nm7gy")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="3"]
+
+[node name="ReportAI" parent="." index="4" node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("3_bhl3w")]
+blackboard = NodePath("@Node@24676")
+actor = NodePath("..")
+
+[node name="ExplosionHitbox" type="Area2D" parent="." index="5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionHitbox" index="0"]
+shape = SubResource("CircleShape2D_ugjbe")
+disabled = true
+one_way_collision_margin = 0.0
+debug_color = Color(1, 0, 0, 1)
+
+[connection signal="body_entered" from="ExplosionHitbox" to="." method="_on_explosion_hitbox_body_entered"]

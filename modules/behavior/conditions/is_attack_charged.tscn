@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgawj38cdf8cs"]
+
+[ext_resource type="Script" path="res://modules/behavior/conditions/is_attack_charged.gd" id="1_jgkg1"]
+
+[node name="IsAttackCharged" type="Node"]
+script = ExtResource("1_jgkg1")

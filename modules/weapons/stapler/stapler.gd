@@ -2,8 +2,8 @@ extends Sprite2D
 
 @export var staple: PackedScene
 
-var melee_cooldown = false
-var shoot_cooldown = false
+var melee_cooldown: bool = false
+var shoot_cooldown: bool = false
 
 
 func _process(_delta: float) -> void:
@@ -15,9 +15,11 @@ func _process(_delta: float) -> void:
 
 
 func shoot() -> void:
-	var shoot_speed = Player.stats.ranged_attack_damage * Player.stats.ranged_attack_speed_modifier
+	var shoot_speed: float = (
+		Player.stats.ranged_attack_damage * Player.stats.ranged_attack_speed_modifier
+	)
 	shoot_cooldown = true
-	var staple_instance = staple.instantiate()
+	var staple_instance: Node = staple.instantiate()
 	staple_instance.transform = $Muzzle.global_transform
 	staple_instance.damage = (
 		Player.stats.ranged_attack_damage * Player.stats.ranged_attack_damage_modifier
@@ -28,7 +30,9 @@ func shoot() -> void:
 
 
 func melee() -> void:
-	var attack_speed = Player.stats.melee_attack_speed * Player.stats.melee_attack_speed_modifier
+	var attack_speed: float = (
+		Player.stats.melee_attack_speed * Player.stats.melee_attack_speed_modifier
+	)
 	melee_cooldown = true
 	$MeleeArea.get_child(0).set_disabled(false)  # CollisionShape2D
 	await get_tree().create_timer(0.2).timeout
@@ -38,8 +42,9 @@ func melee() -> void:
 
 
 func _on_melee_area_body_entered(body: Node2D) -> void:
-	if body.has_method("take_damage"):
-		var damage_to_deal = (
-			Player.stats.melee_attack_damage * Player.stats.melee_attack_damage_modifier
-		)
-		body.take_damage(damage_to_deal)
+	if !body.has_method("take_damage"):
+		return
+	var damage_to_deal: float = (
+		Player.stats.melee_attack_damage * Player.stats.melee_attack_damage_modifier
+	)
+	body.take_damage(damage_to_deal)

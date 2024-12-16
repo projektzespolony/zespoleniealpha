@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb717hjc6tltn"]
+
+[ext_resource type="Script" path="res://modules/weapons/stapler/staple.gd" id="1_gp3er"]
+[ext_resource type="Texture2D" uid="uid://c6lm5n1m8uku2" path="res://assets/game/staple.png" id="2_6xiwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4jgq"]
+size = Vector2(37, 51)
+
+[node name="Staple" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_gp3er")
+
+[node name="StapleArt" type="Sprite2D" parent="."]
+position = Vector2(7, 13)
+rotation = 3.14159
+scale = Vector2(0.0963625, 0.0899675)
+texture = ExtResource("2_6xiwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7.5, 13.5)
+shape = SubResource("RectangleShape2D_f4jgq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

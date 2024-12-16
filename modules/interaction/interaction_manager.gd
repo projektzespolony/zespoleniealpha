@@ -2,22 +2,23 @@ extends Node2D
 
 const BASE_TEXT: String = "[E] to "
 
-var active_areas = []
-var can_interact = true
+var active_areas: Array = []
+var can_interact: bool = true
 
-@onready var label = $Label
+@onready var label: Label = $Label
 
 
-func register_area(area: InteractionArea):
+func register_area(area: InteractionArea) -> void:
 	print("INTERACTION_MANAGER: Registered new area")
 	active_areas.push_back(area)
 
 
-func unregister_area(area: InteractionArea):
+func unregister_area(area: InteractionArea) -> void:
 	print("INTERACTION_MANAGER: Unregistered an area")
-	var index = active_areas.find(area)
-	if index != -1:
-		active_areas.remove_at(index)
+	var index: int = active_areas.find(area)
+	if index == -1:
+		return
+	active_areas.remove_at(index)
 
 
 func _process(_delta: float) -> void:
@@ -35,18 +36,16 @@ func _process(_delta: float) -> void:
 		label.hide()
 
 
-func _sort_by_distance_to_player(area1, area2):
-	var area1_to_player = Player.global_position.distance_to(area1.global_position)
-	var area2_to_player = Player.global_position.distance_to(area2.global_position)
+func _sort_by_distance_to_player(area1: Area2D, area2: Area2D) -> bool:
+	var area1_to_player: float = Player.global_position.distance_to(area1.global_position)
+	var area2_to_player: float = Player.global_position.distance_to(area2.global_position)
 	return area1_to_player < area2_to_player
 
 
-func _input(event):
+func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and can_interact:
 		if active_areas.size() > 0:
 			can_interact = false
 			label.hide()
-
 			await active_areas[0].interact.call()  # activate the callable function
-
 			can_interact = true

@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://cq7cx8nvnnjca"]
+
+[ext_resource type="PackedScene" uid="uid://dag67nytucxxc" path="res://modules/character/character.tscn" id="1_48ll4"]
+[ext_resource type="Script" path="res://modules/character/enemies/micro_biologist/micro_biologist.gd" id="2_liblf"]
+[ext_resource type="Script" path="res://modules/character/stats/initial_stats.gd" id="2_vmby6"]
+[ext_resource type="PackedScene" uid="uid://buk157ggdp1s1" path="res://modules/behavior/behavior_trees/micro_biologist_ai.tscn" id="3_go4a3"]
+
+[sub_resource type="Resource" id="Resource_3clgb"]
+script = ExtResource("2_vmby6")
+max_health = 10
+speed = 0.5
+melee_attack_damage = 5.0
+melee_attack_speed = 2.0
+ranged_attack_damage = 3.0
+ranged_attack_speed = 2.0
+melee_attack_damage_modifier = 1.0
+melee_attack_speed_modifier = 1.0
+ranged_attack_damage_modifier = 1.0
+ranged_attack_speed_modifier = 1.0
+speed_modifier = 1.0
+damage_reduction_modifier = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iavd0"]
+radius = 106.677
+
+[node name="MicroBiologist" instance=ExtResource("1_48ll4")]
+scale = Vector2(0.5, 0.5)
+collision_layer = 8
+script = ExtResource("2_liblf")
+charge_time = 0.25
+base_stats = SubResource("Resource_3clgb")
+
+[node name="WeaponAnchor" type="Area2D" parent="." index="0"]
+
+[node name="WeaponHitbox" type="CollisionShape2D" parent="WeaponAnchor" index="0"]
+position = Vector2(200, 0)
+shape = SubResource("CircleShape2D_iavd0")
+disabled = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="4"]
+debug_enabled = true
+
+[node name="MicroBiologist" parent="." index="5" node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("3_go4a3")]
+blackboard = NodePath("@Node@19364")
+actor = NodePath("..")
+
+[connection signal="body_entered" from="WeaponAnchor" to="." method="_on_weapon_anchor_body_entered"]

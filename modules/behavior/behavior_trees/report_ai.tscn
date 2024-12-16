@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://be6uxk42uhwk6"]
+
+[ext_resource type="Script" path="res://addons/beehave/nodes/beehave_tree.gd" id="1_hlgpp"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/composites/sequence.gd" id="2_tqtma"]
+[ext_resource type="PackedScene" uid="uid://dpu61b3ic3wcx" path="res://modules/behavior/conditions/is_player_within_area.tscn" id="3_sibw7"]
+[ext_resource type="PackedScene" uid="uid://q0jaeeoj1tor" path="res://modules/behavior/leaves/charge_at_player.tscn" id="4_w7nrk"]
+[ext_resource type="PackedScene" uid="uid://csritmdmd457o" path="res://modules/behavior/conditions/is_player_too_close.tscn" id="5_acbc0"]
+[ext_resource type="PackedScene" uid="uid://bto1tc35dioos" path="res://modules/behavior/leaves/explode.tscn" id="6_e65x7"]
+
+[node name="ReportAI" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
+script = ExtResource("1_hlgpp")
+tick_rate = 10
+blackboard = NodePath("@Node@24723")
+actor = NodePath("..")
+
+[node name="SequenceComposite" type="Node" parent="."]
+script = ExtResource("2_tqtma")
+
+[node name="IsPlayerWithinArea" parent="SequenceComposite" instance=ExtResource("3_sibw7")]
+
+[node name="ChargeAtPlayer" parent="SequenceComposite" instance=ExtResource("4_w7nrk")]
+
+[node name="IsPlayerTooClose" parent="SequenceComposite" instance=ExtResource("5_acbc0")]
+
+[node name="Explode" parent="SequenceComposite" instance=ExtResource("6_e65x7")]

@@ -4,21 +4,21 @@ extends Node
 var player: Character
 
 
-func _init(_player: Character):
+func _init(_player: Character) -> void:
 	player = _player
 
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	handle_input(delta)
 
 
-func handle_input(delta):
-	var global_mouse_position = player.get_global_mouse_position()
-	var input_direction = Input.get_vector("left", "right", "up", "down")
+func handle_input(delta: float) -> void:
+	var global_mouse_position: Vector2 = player.get_global_mouse_position()
+	var input_direction: Vector2 = Input.get_vector("left", "right", "up", "down")
 
 	player.look_at(global_mouse_position)
 
-	var velocity = (
+	var velocity: Vector2 = (
 		input_direction
 		* player.get_movement_speed_modifier()
 		* WorldContants.MOVEMENT_SPEED_MULTIPLIER
