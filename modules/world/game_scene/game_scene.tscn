@@ -28,7 +28,7 @@ position = Vector2(-2, -1)
 scale = Vector2(0.971071, 0.954341)
 navigation_polygon = SubResource("NavigationPolygon_2k5pc")
 
-[node name="Sprawozdanie" parent="." instance=ExtResource("3_jupa3")]
+[node name="Report" parent="." instance=ExtResource("3_jupa3")]
 position = Vector2(1080, 142)
 
 [node name="Franke" parent="." instance=ExtResource("3_tp70l")]
