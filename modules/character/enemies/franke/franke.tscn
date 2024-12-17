@@ -40,4 +40,4 @@ debug_use_custom = true
 debug_path_custom_color = Color(0.488872, 4.35102e-05, 0.410768, 1)
 
 [node name="FrankeAi" parent="." index="4" node_paths=PackedStringArray("blackboard") instance=ExtResource("3_fen2j")]
-blackboard = NodePath("@Node@86823")
+blackboard = NodePath("@Node@17276")
