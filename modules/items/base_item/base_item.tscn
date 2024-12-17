@@ -52,6 +52,7 @@ script = ExtResource("1_my81q")
 base_stats = SubResource("Resource_or5g1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 texture = ExtResource("2_63paa")
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_v7t6r")]

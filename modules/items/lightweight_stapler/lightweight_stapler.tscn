@@ -24,8 +24,7 @@ damage_reduction_modifier = 0.0
 script = ExtResource("2_bw8qa")
 base_stats = SubResource("Resource_cptpv")
 item_name = "Lightweight Stapler"
-item_description_text = "[indent]• +0.3 [color=gold]ranged attack speed[/color][/indent]"
+item_description_text = "[indent]• +0.3/s [color=gold]ranged attack speed[/color][/indent]"
 
 [node name="Sprite2D" parent="." index="0"]
-scale = Vector2(2, 2)
 texture = ExtResource("3_xap5b")
