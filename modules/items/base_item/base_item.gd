@@ -2,8 +2,8 @@ class_name BaseItem extends Node2D
 
 @export var base_stats: initialStats
 @onready var interaction_area: InteractionArea = $InteractionArea
-@onready var item_stat_changes: Node = $ItemStatChanges
-
+@onready var item_stat_changes: Stats = $ItemStatChanges
+@onready var item_description: PanelContainer = $ItemDesc
 
 func _ready() -> void:
 	item_stat_changes.initialize(base_stats)
@@ -14,7 +14,7 @@ func _ready() -> void:
 
 
 func _on_show_details() -> void:
-	print("nothing")
+	item_description.visible = not item_description.visible
 
 
 func _on_interact() -> void:

@@ -1,6 +1,7 @@
 extends Node2D
 
 const BASE_TEXT: String = "[E] to "
+const SHOW_DETAILS_TEXT: String = "[Q] to show/hide details"
 
 var active_areas: Array = []
 var can_interact: bool = true
@@ -26,7 +27,7 @@ func _process(_delta: float) -> void:
 		active_areas.sort_custom(_sort_by_distance_to_player)
 
 		# positioning the label
-		label.text = BASE_TEXT + active_areas[0].interaction_name
+		label.text = BASE_TEXT + active_areas[0].interaction_name + "\n" + SHOW_DETAILS_TEXT
 		label.global_position = active_areas[0].global_position  # show above active area
 		label.global_position.y -= 50  # y offset
 		label.global_position.x -= label.size.x / 2  # center the text
@@ -48,4 +49,10 @@ func _input(event: InputEvent) -> void:
 			can_interact = false
 			label.hide()
 			await active_areas[0].interact.call()  # activate the callable function
+			can_interact = true
+	if event.is_action_pressed("show_details") and can_interact:
+		if active_areas.size() > 0:
+			can_interact = false
+			label.hide()
+			await active_areas[0].show_details.call()  # activate the callable function
 			can_interact = true

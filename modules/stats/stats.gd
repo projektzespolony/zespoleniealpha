@@ -1,4 +1,4 @@
-extends Node
+class_name Stats extends Node
 
 var health: int
 var max_health: int
