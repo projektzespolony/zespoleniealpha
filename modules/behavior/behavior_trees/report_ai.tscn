@@ -10,7 +10,7 @@
 [node name="ReportAI" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_hlgpp")
 tick_rate = 10
-blackboard = NodePath("@Node@24723")
+blackboard = NodePath("@Node@17288")
 actor = NodePath("..")
 
 [node name="SequenceComposite" type="Node" parent="."]

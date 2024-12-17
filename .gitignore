@@ -29,3 +29,6 @@ obj/
 
 # Blender
 *.blend1
+
+#Temporary Files from Godot
+*.tmp

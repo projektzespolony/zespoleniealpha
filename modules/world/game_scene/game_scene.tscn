@@ -15,18 +15,13 @@ position = Vector2(4, -4)
 
 [node name="BaseItem" parent="." instance=ExtResource("3_krdqu")]
 position = Vector2(619, 488)
+item_name = "Energol"
+item_description_text = "[indent]• First Trait[/indent][indent]• Second trait[/indent][indent]• Third [color=blue]trait[/color][/indent]"
 
 [node name="BaseItem2" parent="." instance=ExtResource("3_krdqu")]
 position = Vector2(894, 488)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-zoom = Vector2(0.485, 0.485)
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Camera2D" groups=["navigitation_area"]]
-position = Vector2(-2, -1)
-scale = Vector2(0.971071, 0.954341)
-navigation_polygon = SubResource("NavigationPolygon_2k5pc")
+item_name = "Procrastinator's panic"
+item_description_text = "do stuff"
 
 [node name="Report" parent="." instance=ExtResource("3_jupa3")]
 position = Vector2(1080, 142)
@@ -35,3 +30,8 @@ position = Vector2(1080, 142)
 
 [node name="MicroBiologist" parent="." instance=ExtResource("3_uix3l")]
 position = Vector2(804, 205)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." groups=["navigitation_area"]]
+position = Vector2(-2, -1)
+scale = Vector2(0.971071, 0.954341)
+navigation_polygon = SubResource("NavigationPolygon_2k5pc")

@@ -1,14 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://b76ofqud6ia58"]
+[gd_scene load_steps=10 format=3 uid="uid://b76ofqud6ia58"]
 
 [ext_resource type="Script" path="res://modules/items/base_item/base_item.gd" id="1_my81q"]
+[ext_resource type="Resource" uid="uid://cxfyw2g5obyva" path="res://modules/stats/initial_zero_stats.tres" id="2_2vlyp"]
 [ext_resource type="Texture2D" uid="uid://bfkrsjaaucnr" path="res://assets/meta/icon.svg" id="2_63paa"]
 [ext_resource type="PackedScene" uid="uid://bwfdemvkr7rnn" path="res://modules/interaction/interaction_area/interaction_area.tscn" id="3_v7t6r"]
+[ext_resource type="Script" path="res://modules/stats/stats.gd" id="4_g22wv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cfuvl"]
 radius = 163.049
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aim4v"]
+bg_color = Color(0, 0.645, 0.9, 0.286275)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.0124418, 0, 0.225678, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_b3rgv"]
+default_font_size = 20
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_pgoyp"]
+content_margin_left = 1.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 1.0
+color = Color(0.0289255, 1.20327e-08, 0.286879, 1)
+thickness = 5
+
 [node name="BaseItem" type="Node2D"]
 script = ExtResource("1_my81q")
+base_stats = ExtResource("2_2vlyp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.918056, 0, 0.388418, 1)
@@ -20,3 +46,45 @@ interaction_name = "Pick up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("CircleShape2D_cfuvl")
+
+[node name="ItemStatTransformations" type="Node" parent="."]
+script = ExtResource("4_g22wv")
+
+[node name="ItemDesc" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 91.0
+offset_top = -177.0
+offset_right = 301.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_aim4v")
+
+[node name="ItemDescContent" type="VBoxContainer" parent="ItemDesc"]
+layout_mode = 2
+
+[node name="ItemName" type="Label" parent="ItemDesc/ItemDescContent"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_b3rgv")
+text = "Item Name"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ItemDesc/ItemDescContent"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_pgoyp")
+
+[node name="ItemDetails" type="RichTextLabel" parent="ItemDesc/ItemDescContent"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[indent]• First Trait[/indent]
+[indent]• Second trait[/indent]
+[indent]• Third [color=red]trait[/color][/indent]"
+fit_content = true
+scroll_active = false

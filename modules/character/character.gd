@@ -2,7 +2,7 @@ class_name Character
 extends CharacterBody2D
 
 @export var base_stats: initialStats
-@onready var stats: Node = $Stats
+@onready var stats: Stats = $Stats
 
 
 func _ready() -> void:
