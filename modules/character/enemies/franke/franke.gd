@@ -7,6 +7,7 @@ var shoot_cooldown: bool = false
 @onready var navigation_agent_2d: NavigationAgent2D = $NavigationAgent2D
 
 
+
 func get_distance_from_player() -> float:
 	return self.global_position.distance_to(Player.global_position)
 
@@ -24,6 +25,7 @@ func can_shoot() -> bool:
 
 
 func shoot() -> void:
+	print(self.z_index )
 	var direction: Vector2 = (Player.global_position - self.global_position).normalized()
 	var projectile: Node = (
 		preload("res://modules/character/enemies/franke/projectile/enemy_staple.tscn").instantiate()

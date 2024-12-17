@@ -19,10 +19,12 @@ animations = [{
 size = Vector2(128, 126)
 
 [node name="character" type="CharacterBody2D"]
+z_index = 25
 motion_mode = 1
 script = ExtResource("1_rwnrd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2645
 sprite_frames = SubResource("SpriteFrames_n1nlo")
 
 [node name="Stats" type="Node" parent="."]

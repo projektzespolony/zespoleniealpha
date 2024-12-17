@@ -38,10 +38,12 @@ shape = SubResource("CircleShape2D_iavd0")
 disabled = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="4"]
+simplify_epsilon = 2.222
+avoidance_enabled = true
+radius = 100.9
 debug_enabled = true
 
-[node name="MicroBiologist" parent="." index="5" node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("3_go4a3")]
-blackboard = NodePath("@Node@19364")
-actor = NodePath("..")
+[node name="MicroBiologist" parent="." index="5" node_paths=PackedStringArray("blackboard") instance=ExtResource("3_go4a3")]
+blackboard = NodePath("@Node@17279")
 
 [connection signal="body_entered" from="WeaponAnchor" to="." method="_on_weapon_anchor_body_entered"]
