@@ -1,10 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://b76ofqud6ia58"]
+[gd_scene load_steps=11 format=3 uid="uid://b76ofqud6ia58"]
 
 [ext_resource type="Script" path="res://modules/items/base_item/base_item.gd" id="1_my81q"]
-[ext_resource type="Resource" uid="uid://cxfyw2g5obyva" path="res://modules/stats/initial_zero_stats.tres" id="2_2vlyp"]
+[ext_resource type="Script" path="res://modules/stats/initial_stats.gd" id="2_8ghkr"]
 [ext_resource type="Texture2D" uid="uid://bfkrsjaaucnr" path="res://assets/meta/icon.svg" id="2_63paa"]
 [ext_resource type="PackedScene" uid="uid://bwfdemvkr7rnn" path="res://modules/interaction/interaction_area/interaction_area.tscn" id="3_v7t6r"]
 [ext_resource type="Script" path="res://modules/stats/stats.gd" id="4_g22wv"]
+
+[sub_resource type="Resource" id="Resource_or5g1"]
+script = ExtResource("2_8ghkr")
+max_health = 0
+speed = 0.0
+melee_attack_damage = 0.0
+melee_attack_speed = 0.0
+ranged_attack_damage = 0.0
+ranged_attack_speed = 0.0
+melee_attack_damage_modifier = 0.0
+melee_attack_speed_modifier = 0.0
+ranged_attack_damage_modifier = 0.0
+ranged_attack_speed_modifier = 0.0
+speed_modifier = 0.0
+damage_reduction_modifier = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cfuvl"]
 radius = 163.049
@@ -34,11 +49,9 @@ thickness = 5
 
 [node name="BaseItem" type="Node2D"]
 script = ExtResource("1_my81q")
-base_stats = ExtResource("2_2vlyp")
+base_stats = SubResource("Resource_or5g1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.918056, 0, 0.388418, 1)
-self_modulate = Color(1, 0, 0, 1)
 texture = ExtResource("2_63paa")
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_v7t6r")]
@@ -51,6 +64,7 @@ shape = SubResource("CircleShape2D_cfuvl")
 script = ExtResource("4_g22wv")
 
 [node name="ItemDesc" type="PanelContainer" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

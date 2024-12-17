@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://ce5jdu83m0hw8"]
+[gd_scene load_steps=31 format=4 uid="uid://ce5jdu83m0hw8"]
 
 [ext_resource type="Texture2D" uid="uid://bfpc5mlugq1o2" path="res://assets/terrain/Ground/Tilemap_Elevation.png" id="2_236yy"]
 [ext_resource type="Texture2D" uid="uid://dej37na1ckntc" path="res://assets/terrain/Water/Foam/Foam.png" id="2_tdh71"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://w1opaqau6d5d" path="res://assets/terrain/Water/Rocks/Rocks_01.png" id="4_83bw1"]
 [ext_resource type="Texture2D" uid="uid://bdqejdvhk4alw" path="res://assets/terrain/Water/Water.png" id="5_8qjv1"]
 [ext_resource type="Texture2D" uid="uid://cfb02rt6gskn8" path="res://assets/terrain/Ground/Tilemap_Flat.png" id="6_fowac"]
+[ext_resource type="PackedScene" uid="uid://bhbc3qhntn54e" path="res://modules/items/heavy_duty_stapler/heavy_duty_stapler.tscn" id="11_8je7n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m41m8"]
 texture = ExtResource("5_8qjv1")
@@ -477,3 +478,6 @@ position = Vector2(2100, 212)
 [node name="MicroBiologist" parent="." instance=ExtResource("3_uix3l")]
 z_index = 0
 position = Vector2(804, 205)
+
+[node name="HeavyDutyStapler" parent="." instance=ExtResource("11_8je7n")]
+position = Vector2(1336, 406)

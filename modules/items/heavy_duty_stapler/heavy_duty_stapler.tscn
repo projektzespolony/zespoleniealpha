@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhbc3qhntn54e"]
+
+[ext_resource type="PackedScene" uid="uid://b76ofqud6ia58" path="res://modules/items/base_item/base_item.tscn" id="1_wba3n"]
+[ext_resource type="Script" path="res://modules/items/heavy_duty_stapler/heavy_duty_stapler.gd" id="2_5fjkj"]
+[ext_resource type="Texture2D" uid="uid://cb4yf4lo3k2gt" path="res://assets/game/upgrade_icons/office_stapler.png" id="2_pk8ju"]
+
+[node name="HeavyDutyStapler" instance=ExtResource("1_wba3n")]
+script = ExtResource("2_5fjkj")
+item_name = "Heavy Duty Stapler"
+item_description_text = "[indent]• +4 [color=gold]ranged attack damage[/color][/indent]"
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_pk8ju")
