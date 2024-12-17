@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dag67nytucxxc" path="res://modules/character/character.tscn" id="1_84j5e"]
 [ext_resource type="Script" path="res://modules/character/enemies/franke/franke.gd" id="2_te8co"]
 [ext_resource type="PackedScene" uid="uid://dxqegu1j1e77m" path="res://modules/behavior/behavior_trees/franke_ai.tscn" id="3_fen2j"]
-[ext_resource type="Script" path="res://modules/character/stats/initial_stats.gd" id="3_yy2in"]
+[ext_resource type="Script" path="res://modules/stats/initial_stats.gd" id="3_yy2in"]
 
 [sub_resource type="Resource" id="Resource_0xi5u"]
 script = ExtResource("3_yy2in")
