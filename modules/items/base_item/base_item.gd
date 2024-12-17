@@ -1,9 +1,12 @@
 class_name BaseItem extends Node2D
 
 @export var base_stats: initialStats
+@export var item_name: String
+@export var item_description_text: String
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var item_stat_changes: Stats = $ItemStatChanges
-@onready var item_description: PanelContainer = $ItemDesc
+@onready var item_description_panel: PanelContainer = $ItemDesc
+
 
 func _ready() -> void:
 	item_stat_changes.initialize(base_stats)
@@ -11,10 +14,12 @@ func _ready() -> void:
 	interaction_area.show_details = Callable(self, "_on_show_details")
 	# new function for interaction
 	# parameters: who has the function, 99% self, function name
+	item_description_panel.get_node("ItemDescContent/ItemName").text = item_name
+	item_description_panel.get_node("ItemDescContent/ItemDetails").text = item_description_text
 
 
 func _on_show_details() -> void:
-	item_description.visible = not item_description.visible
+	item_description_panel.visible = not item_description_panel.visible
 
 
 func _on_interact() -> void:
