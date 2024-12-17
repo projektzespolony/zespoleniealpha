@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://kssbb5qbxqyv"]
+
+[ext_resource type="PackedScene" uid="uid://b76ofqud6ia58" path="res://modules/items/base_item/base_item.tscn" id="1_fo3qo"]
+[ext_resource type="Script" path="res://modules/stats/initial_stats.gd" id="2_2sw3x"]
+[ext_resource type="Script" path="res://modules/items/gym_membership/gym_membership.gd" id="2_k70ht"]
+[ext_resource type="Texture2D" uid="uid://cejdujm55yd8y" path="res://assets/game/upgrade_icons/gym_membership.png" id="2_rykia"]
+
+[sub_resource type="Resource" id="Resource_6yef2"]
+script = ExtResource("2_2sw3x")
+max_health = 0
+speed = 0.0
+melee_attack_damage = 3.0
+melee_attack_speed = 0.0
+ranged_attack_damage = 0.0
+ranged_attack_speed = 0.0
+melee_attack_damage_modifier = 0.0
+melee_attack_speed_modifier = 0.0
+ranged_attack_damage_modifier = 0.0
+ranged_attack_speed_modifier = 0.0
+speed_modifier = 0.0
+damage_reduction_modifier = 1.05
+
+[node name="GymMembership" instance=ExtResource("1_fo3qo")]
+script = ExtResource("2_k70ht")
+base_stats = SubResource("Resource_6yef2")
+item_name = "Gym Membership"
+item_description_text = "[indent]• +3 [color=red]melee attack damage[/color][/indent][indent]• +5% [color=web_green]damage resistance[/color][/indent]"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_rykia")

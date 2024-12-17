@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuq7asf5t1oxy"]
+
+[ext_resource type="PackedScene" uid="uid://b76ofqud6ia58" path="res://modules/items/base_item/base_item.tscn" id="1_gckep"]
+[ext_resource type="Script" path="res://modules/items/stepik_progress/stepik_progress.gd" id="2_0jbty"]
+[ext_resource type="Script" path="res://modules/stats/initial_stats.gd" id="3_8bf1r"]
+[ext_resource type="Texture2D" uid="uid://bq6lha66jpyo1" path="res://assets/game/upgrade_icons/stepik_progress.png" id="4_qfvur"]
+
+[sub_resource type="Resource" id="Resource_8guxq"]
+script = ExtResource("3_8bf1r")
+max_health = 0
+speed = -3.0
+melee_attack_damage = 0.0
+melee_attack_speed = 0.5
+ranged_attack_damage = 0.0
+ranged_attack_speed = 0.0
+melee_attack_damage_modifier = 0.0
+melee_attack_speed_modifier = 0.0
+ranged_attack_damage_modifier = 0.0
+ranged_attack_speed_modifier = 0.0
+speed_modifier = 0.0
+damage_reduction_modifier = 0.0
+
+[node name="StepikProgress" instance=ExtResource("1_gckep")]
+script = ExtResource("2_0jbty")
+base_stats = SubResource("Resource_8guxq")
+item_name = "Stepik Progress"
+item_description_text = "[indent]• -3 [color=royal_blue]movement speed[/color][/indent][indent]• +0.5/s [color=gold]melee attack speed[/color][/indent]"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("4_qfvur")

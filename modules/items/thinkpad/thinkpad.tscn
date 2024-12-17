@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyt7ot6vna1ae"]
+
+[ext_resource type="PackedScene" uid="uid://b76ofqud6ia58" path="res://modules/items/base_item/base_item.tscn" id="1_047lm"]
+[ext_resource type="Script" path="res://modules/items/thinkpad/thinkpad.gd" id="2_aib75"]
+[ext_resource type="Script" path="res://modules/stats/initial_stats.gd" id="3_5kqk4"]
+[ext_resource type="Texture2D" uid="uid://d4ds8cobdge4k" path="res://assets/game/upgrade_icons/thinkpad.png" id="3_ybjhx"]
+
+[sub_resource type="Resource" id="Resource_pwn4j"]
+script = ExtResource("3_5kqk4")
+max_health = 0
+speed = 0.0
+melee_attack_damage = 6.0
+melee_attack_speed = 0.0
+ranged_attack_damage = 0.0
+ranged_attack_speed = 0.0
+melee_attack_damage_modifier = 0.0
+melee_attack_speed_modifier = 0.0
+ranged_attack_damage_modifier = 0.0
+ranged_attack_speed_modifier = 0.0
+speed_modifier = 0.0
+damage_reduction_modifier = 0.0
+
+[node name="Thinkpad" instance=ExtResource("1_047lm")]
+script = ExtResource("2_aib75")
+base_stats = SubResource("Resource_pwn4j")
+item_name = "Thinkpad"
+item_description_text = "[indent]• +6 [color=red]melee attack damage[/color][/indent]"
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(2, 2)
+texture = ExtResource("3_ybjhx")
