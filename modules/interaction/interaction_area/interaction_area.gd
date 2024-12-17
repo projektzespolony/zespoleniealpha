@@ -6,6 +6,8 @@ extends Area2D
 # Callable stores functions, overridden during inheritance
 var interact: Callable = func() -> void: print("ITEM: Interacted")
 
+var show_details: Callable = func() -> void: print("Item: Details")
+
 
 func _on_body_entered(body: Node2D) -> void:
 	print("INTERACTION_AREA: ", body, " walked into me")
