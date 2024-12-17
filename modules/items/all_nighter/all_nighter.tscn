@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cm860mfphlg55"]
+
+[ext_resource type="PackedScene" uid="uid://b76ofqud6ia58" path="res://modules/items/base_item/base_item.tscn" id="1_xruqr"]
+[ext_resource type="Script" path="res://modules/items/all_nighter/all_nighter.gd" id="2_iuiv8"]
+[ext_resource type="Script" path="res://modules/stats/initial_stats.gd" id="3_ub78u"]
+[ext_resource type="Texture2D" uid="uid://q0djh38qelh1" path="res://assets/game/upgrade_icons/all_nighter.png" id="4_6fa4y"]
+
+[sub_resource type="Resource" id="Resource_kf8ls"]
+script = ExtResource("3_ub78u")
+max_health = 0
+speed = 0.0
+melee_attack_damage = 3.0
+melee_attack_speed = 0.0
+ranged_attack_damage = 2.0
+ranged_attack_speed = 0.0
+melee_attack_damage_modifier = 0.0
+melee_attack_speed_modifier = 0.0
+ranged_attack_damage_modifier = 0.0
+ranged_attack_speed_modifier = 0.0
+speed_modifier = 0.0
+damage_reduction_modifier = 0.95
+
+[node name="AllNighter" instance=ExtResource("1_xruqr")]
+script = ExtResource("2_iuiv8")
+base_stats = SubResource("Resource_kf8ls")
+item_name = "All-nighter"
+item_description_text = "[indent]• -5% [color=web_green]damage resistance[/color][indent]• +2 [color=red]ranged attack damage[/color][/indent][indent]• +3 [color=red]melee attack damage[/color][/indent]"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("4_6fa4y")
