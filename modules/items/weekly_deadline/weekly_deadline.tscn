@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvk3stblxwg3u"]
+
+[ext_resource type="PackedScene" uid="uid://b76ofqud6ia58" path="res://modules/items/base_item/base_item.tscn" id="1_4a8hr"]
+[ext_resource type="Script" path="res://modules/items/weekly_deadline/weekly_deadline.gd" id="2_nf3xm"]
+[ext_resource type="Script" path="res://modules/stats/initial_stats.gd" id="3_vcamf"]
+[ext_resource type="Texture2D" uid="uid://u1u1ecpvltmp" path="res://assets/game/upgrade_icons/weekly_deadline.png" id="4_sk41j"]
+
+[sub_resource type="Resource" id="Resource_cmwua"]
+script = ExtResource("3_vcamf")
+max_health = -5
+speed = 0.0
+melee_attack_damage = 0.0
+melee_attack_speed = 0.0
+ranged_attack_damage = 2.0
+ranged_attack_speed = 0.3
+melee_attack_damage_modifier = 0.0
+melee_attack_speed_modifier = 0.0
+ranged_attack_damage_modifier = 0.0
+ranged_attack_speed_modifier = 0.0
+speed_modifier = 0.0
+damage_reduction_modifier = 0.0
+
+[node name="WeeklyDeadline" instance=ExtResource("1_4a8hr")]
+script = ExtResource("2_nf3xm")
+base_stats = SubResource("Resource_cmwua")
+item_name = "Weekly Deadline"
+item_description_text = "[indent]• -5 [color=green]max health[/color][/indent][indent]• +0.3/s [color=gold]ranged attack speed[/color][/indent][indent]• +2 [color=red]ranged attack damage[/color][/indent]"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("4_sk41j")

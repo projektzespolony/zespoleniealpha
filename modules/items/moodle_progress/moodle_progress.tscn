@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhmk6jen03ra7"]
+
+[ext_resource type="PackedScene" uid="uid://b76ofqud6ia58" path="res://modules/items/base_item/base_item.tscn" id="1_fitx0"]
+[ext_resource type="Script" path="res://modules/items/moodle_progress/moodle_progress.gd" id="2_84buj"]
+[ext_resource type="Script" path="res://modules/stats/initial_stats.gd" id="3_lnqfo"]
+[ext_resource type="Texture2D" uid="uid://btlbadyw2ebqc" path="res://assets/game/upgrade_icons/moodle_progress.png" id="4_edjea"]
+
+[sub_resource type="Resource" id="Resource_70n2v"]
+script = ExtResource("3_lnqfo")
+max_health = 0
+speed = 0.0
+melee_attack_damage = 0.0
+melee_attack_speed = 0.5
+ranged_attack_damage = 0.0
+ranged_attack_speed = 0.0
+melee_attack_damage_modifier = 0.0
+melee_attack_speed_modifier = 0.0
+ranged_attack_damage_modifier = 0.0
+ranged_attack_speed_modifier = 0.0
+speed_modifier = 0.0
+damage_reduction_modifier = 0.92
+
+[node name="MoodleProgress" instance=ExtResource("1_fitx0")]
+script = ExtResource("2_84buj")
+base_stats = SubResource("Resource_70n2v")
+item_name = "Moodle Progress"
+item_description_text = "[indent]• -8% [color=web_green]damage resistance[/color][/indent][indent]• +0.5/s [color=gold]melee attack speed[/color][/indent]"
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-1, 0)
+texture = ExtResource("4_edjea")

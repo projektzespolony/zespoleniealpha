@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj3713ucqndgq"]
+
+[ext_resource type="PackedScene" uid="uid://b76ofqud6ia58" path="res://modules/items/base_item/base_item.tscn" id="1_u4b3m"]
+[ext_resource type="Script" path="res://modules/items/sigma_storage_exceeded/sigma_storage_exceeded.gd" id="2_b3sfc"]
+[ext_resource type="Script" path="res://modules/stats/initial_stats.gd" id="3_rywab"]
+[ext_resource type="Texture2D" uid="uid://btf6ln1k757ap" path="res://assets/game/upgrade_icons/sigma_storage_exceeded.png" id="4_4175f"]
+
+[sub_resource type="Resource" id="Resource_4xpib"]
+script = ExtResource("3_rywab")
+max_health = 0
+speed = 0.0
+melee_attack_damage = 8.0
+melee_attack_speed = 0.0
+ranged_attack_damage = -3.0
+ranged_attack_speed = 0.0
+melee_attack_damage_modifier = 0.0
+melee_attack_speed_modifier = 0.0
+ranged_attack_damage_modifier = 0.0
+ranged_attack_speed_modifier = 0.0
+speed_modifier = 0.0
+damage_reduction_modifier = 0.0
+
+[node name="SigmaStorageExceeded" instance=ExtResource("1_u4b3m")]
+script = ExtResource("2_b3sfc")
+base_stats = SubResource("Resource_4xpib")
+item_name = "Sigma Storage Exceeded"
+item_description_text = "[indent]• -3 [color=red]ranged attack damage[/color][/indent][indent]• +8 [color=red]melee attack damage[/color][/indent]"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("4_4175f")

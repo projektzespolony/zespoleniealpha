@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cblfbue3u1jo8"]
+
+[ext_resource type="PackedScene" uid="uid://b76ofqud6ia58" path="res://modules/items/base_item/base_item.tscn" id="1_rmqnn"]
+[ext_resource type="Script" path="res://modules/items/energy_drink/energy_drink.gd" id="2_nub5x"]
+[ext_resource type="Script" path="res://modules/stats/initial_stats.gd" id="3_q736i"]
+[ext_resource type="Texture2D" uid="uid://bfuiia0es7vlh" path="res://assets/game/upgrade_icons/energy_drink.png" id="4_lvd16"]
+
+[sub_resource type="Resource" id="Resource_2uo2y"]
+script = ExtResource("3_q736i")
+max_health = 0
+speed = 2.0
+melee_attack_damage = 0.0
+melee_attack_speed = 0.0
+ranged_attack_damage = 0.0
+ranged_attack_speed = 0.0
+melee_attack_damage_modifier = 0.0
+melee_attack_speed_modifier = 0.0
+ranged_attack_damage_modifier = 0.0
+ranged_attack_speed_modifier = 0.0
+speed_modifier = 0.0
+damage_reduction_modifier = 0.0
+
+[node name="EnergyDrink" instance=ExtResource("1_rmqnn")]
+script = ExtResource("2_nub5x")
+base_stats = SubResource("Resource_2uo2y")
+item_name = "Energy Drink"
+item_description_text = "[indent]• +2 [color=royal_blue]movement speed[/color][/indent]"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("4_lvd16")
