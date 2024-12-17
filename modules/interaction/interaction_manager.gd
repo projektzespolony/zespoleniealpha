@@ -45,14 +45,16 @@ func _sort_by_distance_to_player(area1: Area2D, area2: Area2D) -> bool:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and can_interact:
-		if active_areas.size() > 0:
-			can_interact = false
-			label.hide()
-			await active_areas[0].interact.call()  # activate the callable function
-			can_interact = true
+		if !active_areas.size() > 0:
+			return
+		can_interact = false
+		label.hide()
+		await active_areas[0].interact.call()  # activate the callable function
+		can_interact = true
 	if event.is_action_pressed("show_details") and can_interact:
-		if active_areas.size() > 0:
-			can_interact = false
-			label.hide()
-			await active_areas[0].show_details.call()  # activate the callable function
-			can_interact = true
+		if !active_areas.size() > 0:
+			return
+		can_interact = false
+		label.hide()
+		await active_areas[0].show_details.call()  # activate the callable function
+		can_interact = true

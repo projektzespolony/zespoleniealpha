@@ -4,9 +4,9 @@ extends Area2D
 @export var interaction_name: String = "interact"
 
 # Callable stores functions, overridden during inheritance
-var interact: Callable = func() -> void: print("ITEM: Interacted")
+var interact: Callable = func() -> void: pass
 
-var show_details: Callable = func() -> void: print("Item: Details")
+var show_details: Callable = func() -> void: pass
 
 
 func _on_body_entered(body: Node2D) -> void:
