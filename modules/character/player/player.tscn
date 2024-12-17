@@ -22,6 +22,8 @@ speed_modifier = 1.0
 damage_reduction_modifier = 1.0
 
 [node name="player" groups=["player"] instance=ExtResource("1_lhhq2")]
+collision_layer = 9
+collision_mask = 9
 script = ExtResource("1_aveaj")
 base_stats = SubResource("Resource_xhy3y")
 
@@ -35,8 +37,10 @@ position = Vector2(0, 6.10352e-05)
 rotation = 3.14159
 scale = Vector2(126.652, 106.32)
 zoom = Vector2(0.61, 0.61)
-limit_left = 0
-limit_top = 0
+limit_left = -550
+limit_top = -440
+limit_right = 3700
+limit_bottom = 2300
 position_smoothing_enabled = true
 position_smoothing_speed = 6.985
 rotation_smoothing_enabled = true
