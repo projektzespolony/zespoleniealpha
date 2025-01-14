@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpxg3yyuvivv7"]
+
+[ext_resource type="Script" path="res://modules/interaction/spawner/spawner.gd" id="1_y8goy"]
+[ext_resource type="Script" path="res://modules/interaction/spawner/spawn_list.gd" id="2_un3a3"]
+
+[sub_resource type="Resource" id="Resource_qayfu"]
+script = ExtResource("2_un3a3")
+list = Array[PackedScene]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1fq4"]
+
+[node name="Spawner" type="Area2D"]
+script = ExtResource("1_y8goy")
+spawnList = SubResource("Resource_qayfu")
+
+[node name="SpawnCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p1fq4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
