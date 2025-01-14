@@ -8,6 +8,7 @@ script = ExtResource("2_un3a3")
 list = Array[PackedScene]([])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1fq4"]
+size = Vector2(446, 287)
 
 [node name="Spawner" type="Area2D"]
 script = ExtResource("1_y8goy")
