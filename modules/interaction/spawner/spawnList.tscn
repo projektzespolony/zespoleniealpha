@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwuvqe1t2lw7n"]
-
-[ext_resource type="Script" path="res://modules/interaction/spawner/spawn_list.gd" id="1_2ttyv"]
-
-[node name="SpawnList" type="Node2D"]
-script = ExtResource("1_2ttyv")

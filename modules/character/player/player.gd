@@ -9,7 +9,7 @@ func _init() -> void:
 
 
 func take_damage(damage: int) -> void:
-	stats.health -= damage / stats.damage_reduction
+	stats.health -= int(damage / stats.damage_reduction)
 	print("PLAYER: ", self, "Current health: ", stats.health, " took ", damage)
 	if !is_alive():
 		game_over()
