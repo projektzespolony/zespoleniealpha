@@ -1,3 +1,3 @@
 class_name SpawnList extends Resource
 
-@export var list : Array[PackedScene]
+@export var list: Array[PackedScene]

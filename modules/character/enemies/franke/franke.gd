@@ -7,7 +7,6 @@ var shoot_cooldown: bool = false
 @onready var navigation_agent_2d: NavigationAgent2D = $NavigationAgent2D
 
 
-
 func get_distance_from_player() -> float:
 	return self.global_position.distance_to(Player.global_position)
 
@@ -25,7 +24,6 @@ func can_shoot() -> bool:
 
 
 func shoot() -> void:
-	print(self.z_index )
 	var direction: Vector2 = (Player.global_position - self.global_position).normalized()
 	var projectile: Node = (
 		preload("res://modules/character/enemies/franke/projectile/enemy_staple.tscn").instantiate()
@@ -47,7 +45,6 @@ func _physics_process(delta: float) -> void:
 	if navigation_agent_2d.is_navigation_finished():
 		return
 	var direction: Vector2 = to_local(navigation_agent_2d.get_next_path_position()).normalized()
-	print(direction)
 	self.velocity = (
 		direction * get_movement_speed_modifier() * WorldContants.MOVEMENT_SPEED_MULTIPLIER * delta
 	)
