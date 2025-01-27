@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpawnList" load_steps=5 format=3 uid="uid://ctsl0tw7gnn8o"]
+
+[ext_resource type="PackedScene" uid="uid://bx3m2865fnrtv" path="res://modules/character/enemies/franke/franke.tscn" id="1_kwm14"]
+[ext_resource type="PackedScene" uid="uid://cq7cx8nvnnjca" path="res://modules/character/enemies/micro_biologist/micro_biologist.tscn" id="2_r6isu"]
+[ext_resource type="PackedScene" uid="uid://c8sv6cr7h4she" path="res://modules/character/enemies/report/report.tscn" id="3_5rvxo"]
+[ext_resource type="Script" path="res://modules/spawner/spawn_list.gd" id="4_rj57k"]
+
+[resource]
+script = ExtResource("4_rj57k")
+list = Array[PackedScene]([ExtResource("1_kwm14"), ExtResource("2_r6isu"), ExtResource("3_5rvxo")])

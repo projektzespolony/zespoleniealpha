@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwuvqe1t2lw7n"]
+
+[sub_resource type="GDScript" id="GDScript_nl7bk"]
+script/source = "class_name SpawnList extends Resource
+
+@export var list : Array[PackedScene]
+"
+
+[node name="SpawnList" type="Node2D"]
+script = SubResource("GDScript_nl7bk")

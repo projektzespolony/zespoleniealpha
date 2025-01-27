@@ -31,7 +31,7 @@ base_stats = SubResource("Resource_nm7gy")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="3"]
 
 [node name="ReportAI" parent="." index="4" node_paths=PackedStringArray("blackboard") instance=ExtResource("3_bhl3w")]
-blackboard = NodePath("@Node@53575")
+blackboard = NodePath("@Node@17268")
 
 [node name="ExplosionHitbox" type="Area2D" parent="." index="5"]
 

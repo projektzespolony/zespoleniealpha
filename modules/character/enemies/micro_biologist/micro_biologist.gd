@@ -28,7 +28,6 @@ func _physics_process(delta: float) -> void:
 	if navigation_agent_2d.is_navigation_finished():
 		return
 	var direction: Vector2 = to_local(navigation_agent_2d.get_next_path_position()).normalized()
-	print(direction)
 	self.velocity = (
 		direction * get_movement_speed_modifier() * WorldContants.MOVEMENT_SPEED_MULTIPLIER * delta
 	)
