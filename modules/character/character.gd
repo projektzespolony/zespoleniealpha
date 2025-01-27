@@ -15,6 +15,8 @@ func take_damage(damage: int) -> void:
 	stats.health -= int(damage / stats.damage_reduction)
 	print("CHARACTER: ", self, "Current health: ", stats.health, " took ", damage)
 	if !is_alive():
+		print("DEATH: signaling observer")
+		get_tree().call_group("Spawner","check_end_of_stage_staus")
 		queue_free()
 
 

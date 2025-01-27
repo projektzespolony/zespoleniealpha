@@ -1,6 +1,7 @@
 extends Node2D
 @export var enemy_spawn_locations: TileMapLayer
 @export var item_spawn_locations: TileMapLayer
+@export var boss_arena: TileMapLayer
 @export var enemy_list: SpawnList
 @export var item_list: SpawnList
 @export var enemy_limit: int
@@ -43,3 +44,8 @@ func spawn_entity(
 	if remove_spawn_tile:
 		item_spawn_locations.erase_cell(possible_tiles[tile_index])
 	get_tree().current_scene.call_deferred("add_child", entity)
+
+func check_end_of_stage_staus() -> void:
+	if len(get_tree().get_nodes_in_group("Enemies")) - 1 == 0 and enemy_limit == 0:
+		Player.position = boss_arena.get_parent().position
+		get_tree().call_group("Camera","change_camera_to_boss_room")
