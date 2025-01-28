@@ -9,10 +9,12 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Player.visible = false
 	start_button.button_up.connect(on_start_up)
 	exit_button.button_up.connect(on_exit_up)
 
 func on_start_up() -> void:
+	Player.visible = true
 	get_tree().change_scene_to_packed(start_level)
 
 func on_exit_up() -> void:

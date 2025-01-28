@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dashfjn5flotq"]
 
-[ext_resource type="Script" path="res://modules/world/main_menu_scene/main_menu.gd" id="1_v2t6u"]
-[ext_resource type="Texture2D" uid="uid://bdqejdvhk4alw" path="res://assets/terrain/Water/Water.png" id="2_pm8q8"]
-[ext_resource type="FontFile" uid="uid://cybfevw5k1vdv" path="res://assets/fonts/pixy.regular.ttf" id="3_cmoi4"]
+[ext_resource type="Script" path="res://modules/world/main_menu_scene/main_menu.gd" id="1_ns8jr"]
+[ext_resource type="Texture2D" uid="uid://bdqejdvhk4alw" path="res://assets/terrain/Water/Water.png" id="2_ud1cm"]
+[ext_resource type="FontFile" uid="uid://cybfevw5k1vdv" path="res://assets/fonts/pixy.regular.ttf" id="3_jxa3s"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_v2t6u")
+script = ExtResource("1_ns8jr")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_pm8q8")
+texture = ExtResource("2_ud1cm")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -46,7 +46,7 @@ layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 3
-theme_override_fonts/font = ExtResource("3_cmoi4")
+theme_override_fonts/font = ExtResource("3_jxa3s")
 theme_override_font_sizes/font_size = 61
 text = "Temp title of the game, woop woop"
 horizontal_alignment = 1
@@ -66,18 +66,18 @@ layout_mode = 2
 
 [node name="Start_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_cmoi4")
+theme_override_fonts/font = ExtResource("3_jxa3s")
 theme_override_font_sizes/font_size = 26
 text = "Start"
 
 [node name="Options_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_cmoi4")
+theme_override_fonts/font = ExtResource("3_jxa3s")
 theme_override_font_sizes/font_size = 26
 text = "Options"
 
 [node name="Exit_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_cmoi4")
+theme_override_fonts/font = ExtResource("3_jxa3s")
 theme_override_font_sizes/font_size = 26
 text = "Abandon Hope"
