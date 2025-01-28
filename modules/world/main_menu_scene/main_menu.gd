@@ -1,20 +1,17 @@
 class_name MainMenu
 extends Control
 
-@onready var start_button: Button = $MarginContainer/HBoxContainer/VBoxContainer/Start_button
-@onready var options_button: Button = $MarginContainer/HBoxContainer/VBoxContainer/Options_button
-@onready var exit_button: Button = $MarginContainer/HBoxContainer/VBoxContainer/Exit_button
 @export var start_level: PackedScene = preload("res://modules/world/game_scene/game_scene.tscn")
 
 
 func _ready() -> void:
+	Engine.time_scale = 0
 	Player.visible = false
-	start_button.button_up.connect(on_start_up)
-	exit_button.button_up.connect(on_exit_up)
 
-func on_start_up() -> void:
+func _on_start_button_button_up() -> void:
+	Engine.time_scale = 1
 	Player.visible = true
 	get_tree().change_scene_to_packed(start_level)
 
-func on_exit_up() -> void:
+func _on_exit_button_button_up() -> void:
 	get_tree().quit()

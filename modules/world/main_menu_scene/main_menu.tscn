@@ -81,3 +81,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_jxa3s")
 theme_override_font_sizes/font_size = 26
 text = "Abandon Hope"
+
+[connection signal="button_up" from="MarginContainer/HBoxContainer/VBoxContainer/Start_button" to="." method="_on_start_button_button_up"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/VBoxContainer/Exit_button" to="." method="_on_exit_button_button_up"]
