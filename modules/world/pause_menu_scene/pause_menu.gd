@@ -1,7 +1,6 @@
 extends Control
 
 @onready var main = $".."
-#@export var menu_scene: PackedScene = preload("res://modules/world/main_menu_scene/main_menu.tscn")
 
 
 func _on_resume_button_button_up() -> void:

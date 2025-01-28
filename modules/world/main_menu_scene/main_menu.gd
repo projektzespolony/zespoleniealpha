@@ -7,7 +7,6 @@ extends Control
 @export var start_level: PackedScene = preload("res://modules/world/game_scene/game_scene.tscn")
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Player.visible = false
 	start_button.button_up.connect(on_start_up)
@@ -19,7 +18,3 @@ func on_start_up() -> void:
 
 func on_exit_up() -> void:
 	get_tree().quit()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
