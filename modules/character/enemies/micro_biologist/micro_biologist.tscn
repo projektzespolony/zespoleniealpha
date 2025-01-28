@@ -44,6 +44,6 @@ radius = 100.9
 debug_enabled = true
 
 [node name="MicroBiologist" parent="." index="5" node_paths=PackedStringArray("blackboard") instance=ExtResource("3_go4a3")]
-blackboard = NodePath("@Node@17265")
+blackboard = NodePath("@Node@17268")
 
 [connection signal="body_entered" from="WeaponAnchor" to="." method="_on_weapon_anchor_body_entered"]
