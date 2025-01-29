@@ -1,5 +1,6 @@
 extends Character
 
+@export var death_level: PackedScene = preload("res://modules/world/death_scene/death_scene.tscn")
 var player_input: PlayerInput
 
 
@@ -18,3 +19,4 @@ func take_damage(damage: int) -> void:
 func game_over() -> void:
 	#wlaczyc menusy
 	print("GG LMAO")
+	get_tree().change_scene_to_packed(death_level)
