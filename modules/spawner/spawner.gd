@@ -45,7 +45,8 @@ func spawn_entity(
 		item_spawn_locations.erase_cell(possible_tiles[tile_index])
 	get_tree().current_scene.call_deferred("add_child", entity)
 
+
 func check_end_of_stage_staus() -> void:
-	if len(get_tree().get_nodes_in_group("Enemies")) - 1 == 0 and enemy_limit == 0:
-		Player.position = boss_arena.get_parent().position
-		get_tree().call_group("Camera","change_camera_to_boss_room")
+	enemy_limit -= 1
+	if len(get_tree().get_nodes_in_group("Enemies")) == 0 and enemy_limit == 0:
+		get_tree().call_group("BossArena", "start_boss_fight")
