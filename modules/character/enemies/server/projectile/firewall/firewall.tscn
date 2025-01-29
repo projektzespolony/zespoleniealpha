@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp5j7v6wgjrs7"]
+
+[ext_resource type="Script" path="res://modules/character/enemies/server/projectile/firewall/firewall.gd" id="1_kdcb2"]
+[ext_resource type="Texture2D" uid="uid://be38h853kmsmq" path="res://assets/game/projectiles/firewall.png" id="2_4gp12"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4jgq"]
+size = Vector2(96, 41)
+
+[node name="Firewall" type="Area2D"]
+scale = Vector2(2.5, 2)
+collision_layer = 4
+script = ExtResource("1_kdcb2")
+speed = 500.0
+
+[node name="FirewallArt" type="Sprite2D" parent="."]
+scale = Vector2(0.0963625, 0.0899675)
+texture = ExtResource("2_4gp12")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f4jgq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

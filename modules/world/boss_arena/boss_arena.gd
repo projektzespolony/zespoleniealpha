@@ -18,6 +18,7 @@ func start_boss_fight() -> void:
 
 func boss_intro() -> void:
 	Player.visible = false
+	announcement_block.visible = true
 	for text in text_blocks.get_children():
 		text.visible = true
 		await get_tree().create_timer(0.8).timeout

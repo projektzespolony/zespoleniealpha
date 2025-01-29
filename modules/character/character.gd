@@ -6,8 +6,6 @@ extends CharacterBody2D
 
 
 func _ready() -> void:
-	print("Stats:", stats)
-	print("BaseStats: ", base_stats)
 	stats.initialize(base_stats)
 
 
@@ -16,7 +14,7 @@ func take_damage(damage: int) -> void:
 	print("CHARACTER: ", self, "Current health: ", stats.health, " took ", damage)
 	if !is_alive():
 		print("DEATH: signaling observer")
-		get_tree().call_group("Spawner","check_end_of_stage_staus")
+		get_tree().call_group("Spawner", "check_end_of_stage_staus")
 		queue_free()
 
 

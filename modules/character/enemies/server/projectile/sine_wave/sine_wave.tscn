@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://gh76yitda6bb"]
+
+[ext_resource type="Script" path="res://modules/character/enemies/server/projectile/sine_wave/sine_wave.gd" id="1_pfq8v"]
+[ext_resource type="Texture2D" uid="uid://dxndw31tupdd5" path="res://assets/game/projectiles/unnamed.png" id="2_ki4yf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hp40c"]
+radius = 14.5382
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_33ce7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ki4yf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Sinewave" type="Area2D"]
+scale = Vector2(2.5, 2)
+collision_layer = 4
+script = ExtResource("1_pfq8v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hp40c")
+
+[node name="SineWaveArt" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_33ce7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

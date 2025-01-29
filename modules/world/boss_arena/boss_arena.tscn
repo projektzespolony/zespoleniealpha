@@ -197,7 +197,6 @@ sources/0 = SubResource("TileSetAtlasSource_6n1d4")
 [sub_resource type="Texture2DRD" id="Texture2DRD_fv0tl"]
 
 [node name="BossArena" type="Node2D" groups=["BossArena"]]
-position = Vector2(6576, 641)
 script = ExtResource("1_noj5p")
 boss = ExtResource("2_lwjkg")
 
@@ -207,6 +206,7 @@ tile_set = SubResource("TileSet_02itj")
 rendering_quadrant_size = 32
 
 [node name="Announcement" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -275,7 +275,7 @@ text = "
                 THE Σ SERVER"
 
 [node name="SpawnPoint" type="Node2D" parent="."]
-position = Vector2(912, 233)
+position = Vector2(912, 181)
 
 [node name="PlayerSpawnPoint" type="Node2D" parent="."]
 position = Vector2(912, 866)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4y5cfeprhrnq"]
+
+[ext_resource type="Script" path="res://modules/behavior/leaves/use_bomb_attack.gd" id="1_661d0"]
+
+[node name="UseBombAttack" type="Node"]
+script = ExtResource("1_661d0")

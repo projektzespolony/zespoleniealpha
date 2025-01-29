@@ -7,9 +7,9 @@ const OFFSET: int = 5
 
 
 func _ready() -> void:
-	var map_rect = tile_map.get_used_rect()
-	var quadrant_size = tile_map.rendering_quadrant_size
-	var world_size = map_rect.size * quadrant_size
+	var map_rect: Rect2i = tile_map.get_used_rect()
+	var quadrant_size: int = tile_map.rendering_quadrant_size
+	var world_size: Vector2 = map_rect.size * quadrant_size
 	self.limit_right = world_size.x + (map_rect.position.x - OFFSET) * quadrant_size
 	self.limit_bottom = world_size.y + (map_rect.position.y - OFFSET) * quadrant_size
 
@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 	self.position = Player.position
 
 
-func change_camera_to_boss_room():
+func change_camera_to_boss_room() -> void:
 	var position_in_world: Vector2 = boss_arena.position
 	var map_rect_boss: Rect2i = tile_map_boss_arena.get_used_rect()
 	var quadrant_size_boss: int = tile_map_boss_arena.rendering_quadrant_size
