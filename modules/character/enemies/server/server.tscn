@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://bygxkwqbhgaht"]
+
+[ext_resource type="PackedScene" uid="uid://dag67nytucxxc" path="res://modules/character/character.tscn" id="1_pf5eg"]
+[ext_resource type="Script" path="res://modules/character/enemies/server/server.gd" id="2_m6mo3"]
+[ext_resource type="Script" path="res://modules/stats/initial_stats.gd" id="2_nbyhu"]
+[ext_resource type="PackedScene" uid="uid://bp5j7v6wgjrs7" path="res://modules/character/enemies/server/projectile/firewall/firewall.tscn" id="3_42ayo"]
+[ext_resource type="PackedScene" uid="uid://bkg3na7b4iu23" path="res://modules/behavior/behavior_trees/server_ai.tscn" id="4_6cbqh"]
+[ext_resource type="PackedScene" uid="uid://dyyxa73ipw5vv" path="res://modules/character/enemies/server/projectile/cache_bomb/cache_bomb.tscn" id="4_br6jv"]
+[ext_resource type="PackedScene" uid="uid://d16eji0bjpun4" path="res://modules/character/enemies/server/rack/rack.tscn" id="5_8i2l6"]
+[ext_resource type="PackedScene" uid="uid://gh76yitda6bb" path="res://modules/character/enemies/server/projectile/sine_wave/sine_wave.tscn" id="5_qr18k"]
+
+[sub_resource type="Resource" id="Resource_h1i23"]
+script = ExtResource("2_nbyhu")
+max_health = 200
+speed = 0.0
+melee_attack_damage = 3.0
+melee_attack_speed = 0.0
+ranged_attack_damage = 0.0
+ranged_attack_speed = 0.0
+melee_attack_damage_modifier = 1.0
+melee_attack_speed_modifier = 1.0
+ranged_attack_damage_modifier = 1.0
+ranged_attack_speed_modifier = 1.0
+speed_modifier = 1.0
+damage_reduction_modifier = 1.0
+
+[node name="Server" instance=ExtResource("1_pf5eg")]
+scale = Vector2(2, 2)
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("2_m6mo3")
+firewall_projectile = ExtResource("3_42ayo")
+cache_bomb = ExtResource("4_br6jv")
+sine_wave = ExtResource("5_qr18k")
+base_stats = SubResource("Resource_h1i23")
+
+[node name="Hitbox" parent="." index="2"]
+position = Vector2(-1, -0.25)
+
+[node name="ServerRacks" type="Node2D" parent="." index="3"]
+
+[node name="Rack1" parent="ServerRacks" index="0" node_paths=PackedStringArray("server") instance=ExtResource("5_8i2l6")]
+position = Vector2(300, 0)
+server = NodePath("../..")
+
+[node name="Rack3" parent="ServerRacks" index="1" node_paths=PackedStringArray("server") instance=ExtResource("5_8i2l6")]
+position = Vector2(-300, 0)
+server = NodePath("../..")
+
+[node name="ServerAi" parent="." index="4" node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("4_6cbqh")]
+blackboard = NodePath("@Node@43704")
+actor = NodePath("..")

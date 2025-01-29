@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://l6exvj0gb8c1"]
+
+[ext_resource type="Script" path="res://modules/behavior/conditions/is_below_75.gd" id="1_pahp3"]
+
+[node name="IsBelow75" type="Node"]
+script = ExtResource("1_pahp3")

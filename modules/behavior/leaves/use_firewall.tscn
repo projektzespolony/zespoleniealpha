@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://3jcmxyufjep3"]
+
+[ext_resource type="Script" path="res://modules/behavior/leaves/use_firewall.gd" id="1_37wi5"]
+
+[node name="UseFirewall" type="Node"]
+script = ExtResource("1_37wi5")

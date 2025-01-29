@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://djq5rm3tytj5m"]
 
 [ext_resource type="Script" path="res://modules/weapons/stapler/staple.gd" id="1_ukggj"]
-[ext_resource type="Texture2D" uid="uid://c6lm5n1m8uku2" path="res://assets/game/staple.png" id="2_a18ye"]
+[ext_resource type="Texture2D" uid="uid://c6lm5n1m8uku2" path="res://assets/game/projectiles/staple.png" id="2_a18ye"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f4jgq"]
 size = Vector2(37, 51)

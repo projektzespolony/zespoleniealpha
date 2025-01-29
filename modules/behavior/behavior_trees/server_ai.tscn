@@ -1,0 +1,99 @@
+[gd_scene load_steps=16 format=3 uid="uid://bkg3na7b4iu23"]
+
+[ext_resource type="Script" path="res://addons/beehave/nodes/beehave_tree.gd" id="1_60t67"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/composites/selector.gd" id="2_dtga7"]
+[ext_resource type="PackedScene" uid="uid://l6exvj0gb8c1" path="res://modules/behavior/conditions/is_below_75.tscn" id="4_v2bte"]
+[ext_resource type="PackedScene" uid="uid://duohxvbla5hyy" path="res://modules/behavior/leaves/delete_rack.tscn" id="5_kqyxw"]
+[ext_resource type="PackedScene" uid="uid://ckiv3ep3uvvkc" path="res://modules/behavior/leaves/boss_bomb_attack.tscn" id="6_c711i"]
+[ext_resource type="PackedScene" uid="uid://dqf6enr1qfrwe" path="res://modules/behavior/conditions/is_below_50.tscn" id="6_fe3pq"]
+[ext_resource type="PackedScene" uid="uid://fji4cao0hfal" path="res://modules/behavior/leaves/boss_sine_attack.tscn" id="7_gwlrl"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/decorators/inverter.gd" id="8_mv344"]
+[ext_resource type="PackedScene" uid="uid://q6a85un4skf5" path="res://modules/behavior/leaves/use_sine_attack.tscn" id="9_3ywb1"]
+[ext_resource type="Script" path="res://modules/behavior/conditions/is_below_75.gd" id="9_ooteb"]
+[ext_resource type="PackedScene" uid="uid://3jcmxyufjep3" path="res://modules/behavior/leaves/use_firewall.tscn" id="10_73hjw"]
+[ext_resource type="Script" path="res://modules/behavior/conditions/is_below_50.gd" id="10_g8sg8"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/composites/sequence.gd" id="10_sh347"]
+[ext_resource type="PackedScene" uid="uid://b4y5cfeprhrnq" path="res://modules/behavior/leaves/use_bomb_attack.tscn" id="11_stnv4"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/decorators/cooldown.gd" id="11_yas1q"]
+
+[node name="ServerAi" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
+script = ExtResource("1_60t67")
+tick_rate = 3
+blackboard = NodePath("@Node@21015")
+actor = NodePath("..")
+
+[node name="SelectorComposite" type="Node" parent="."]
+script = ExtResource("2_dtga7")
+
+[node name="SequenceComposite" type="Node" parent="SelectorComposite"]
+script = ExtResource("10_sh347")
+
+[node name="IsBelow50" parent="SelectorComposite/SequenceComposite" instance=ExtResource("6_fe3pq")]
+
+[node name="DeleteRack" parent="SelectorComposite/SequenceComposite" instance=ExtResource("5_kqyxw")]
+
+[node name="CooldownDecorator2" type="Node" parent="SelectorComposite/SequenceComposite"]
+script = ExtResource("11_yas1q")
+wait_time = 0.15
+
+[node name="BossBombAttack" parent="SelectorComposite/SequenceComposite/CooldownDecorator2" instance=ExtResource("6_c711i")]
+
+[node name="BossSineAttack" parent="SelectorComposite/SequenceComposite" instance=ExtResource("7_gwlrl")]
+
+[node name="SequenceComposite2" type="Node" parent="SelectorComposite"]
+script = ExtResource("10_sh347")
+
+[node name="InverterDecorator" type="Node" parent="SelectorComposite/SequenceComposite2"]
+script = ExtResource("8_mv344")
+
+[node name="IsBelow50" type="Node" parent="SelectorComposite/SequenceComposite2/InverterDecorator"]
+script = ExtResource("10_g8sg8")
+
+[node name="IsBelow75" parent="SelectorComposite/SequenceComposite2" instance=ExtResource("4_v2bte")]
+
+[node name="DeleteRack" parent="SelectorComposite/SequenceComposite2" instance=ExtResource("5_kqyxw")]
+
+[node name="SelectorComposite3" type="Node" parent="SelectorComposite/SequenceComposite2"]
+script = ExtResource("2_dtga7")
+
+[node name="CooldownDecorator" type="Node" parent="SelectorComposite/SequenceComposite2/SelectorComposite3"]
+script = ExtResource("11_yas1q")
+wait_time = 0.5
+
+[node name="UseSineAttack" parent="SelectorComposite/SequenceComposite2/SelectorComposite3/CooldownDecorator" instance=ExtResource("9_3ywb1")]
+
+[node name="CooldownDecorator2" type="Node" parent="SelectorComposite/SequenceComposite2/SelectorComposite3"]
+script = ExtResource("11_yas1q")
+wait_time = 1.25
+
+[node name="UseFirewall" parent="SelectorComposite/SequenceComposite2/SelectorComposite3/CooldownDecorator2" instance=ExtResource("10_73hjw")]
+
+[node name="SequenceComposite3" type="Node" parent="SelectorComposite"]
+script = ExtResource("10_sh347")
+
+[node name="InverterDecorator" type="Node" parent="SelectorComposite/SequenceComposite3"]
+script = ExtResource("8_mv344")
+
+[node name="IsBelow75" type="Node" parent="SelectorComposite/SequenceComposite3/InverterDecorator"]
+script = ExtResource("9_ooteb")
+
+[node name="SelectorComposite3" type="Node" parent="SelectorComposite/SequenceComposite3"]
+script = ExtResource("2_dtga7")
+
+[node name="CooldownDecorator" type="Node" parent="SelectorComposite/SequenceComposite3/SelectorComposite3"]
+script = ExtResource("11_yas1q")
+wait_time = 0.1
+
+[node name="UseSineAttack" parent="SelectorComposite/SequenceComposite3/SelectorComposite3/CooldownDecorator" instance=ExtResource("9_3ywb1")]
+
+[node name="CooldownDecorator2" type="Node" parent="SelectorComposite/SequenceComposite3/SelectorComposite3"]
+script = ExtResource("11_yas1q")
+wait_time = 0.5
+
+[node name="UseFirewall" parent="SelectorComposite/SequenceComposite3/SelectorComposite3/CooldownDecorator2" instance=ExtResource("10_73hjw")]
+
+[node name="CooldownDecorator3" type="Node" parent="SelectorComposite/SequenceComposite3/SelectorComposite3"]
+script = ExtResource("11_yas1q")
+wait_time = 0.2
+
+[node name="UseBombAttack" parent="SelectorComposite/SequenceComposite3/SelectorComposite3/CooldownDecorator3" instance=ExtResource("11_stnv4")]

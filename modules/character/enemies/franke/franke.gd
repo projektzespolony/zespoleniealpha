@@ -32,6 +32,7 @@ func shoot() -> void:
 	projectile.rotation = angle_to_player
 	get_tree().get_root().add_child(projectile)
 	projectile.global_position = global_position
+	projectile.damage = stats.ranged_attack_damage * stats.ranged_attack_damage_modifier
 	shoot_cooldown = true
 	await (
 		get_tree()

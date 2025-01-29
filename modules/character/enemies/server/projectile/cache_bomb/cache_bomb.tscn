@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyyxa73ipw5vv"]
+
+[ext_resource type="Script" path="res://modules/character/enemies/server/projectile/cache_bomb/cache_bomb.gd" id="1_dgi0y"]
+[ext_resource type="Texture2D" uid="uid://brvgs1r1rppcx" path="res://assets/game/upgrade_icons/sigma_storage_exceeded.png" id="2_10tnb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nr88g"]
+radius = 56.5792
+
+[node name="CacheBomb" type="Area2D"]
+scale = Vector2(2.5, 2)
+collision_layer = 8
+script = ExtResource("1_dgi0y")
+
+[node name="CacheBombArt" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+skew = 0.410152
+texture = ExtResource("2_10tnb")
+
+[node name="ExplosionHitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nr88g")
+disabled = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

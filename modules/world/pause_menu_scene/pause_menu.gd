@@ -1,6 +1,6 @@
 extends Control
 
-@onready var main = $".."
+@onready var main: Node = $".."
 
 
 func _on_resume_button_button_up() -> void:

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://d16eji0bjpun4"]
+
+[ext_resource type="Script" path="res://modules/character/enemies/server/rack/rack.gd" id="1_40igf"]
+[ext_resource type="Texture2D" uid="uid://cyne3h13arteq" path="res://assets/game/upgrade_icons/the_september.png" id="1_nuiq7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbjrs"]
+size = Vector2(64, 64.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s6xpr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nuiq7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Rack1" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_40igf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.25)
+shape = SubResource("RectangleShape2D_tbjrs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_s6xpr")

@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://modules/world/pause_menu_scene/pause_menu.gd" id="1_vn2dd"]
 
 [node name="PauseMenu" type="Control"]
+z_index = 30
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,6 +16,7 @@ script = ExtResource("1_vn2dd")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(2.47326, 2.47326)
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12

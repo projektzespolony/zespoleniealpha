@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqf6enr1qfrwe"]
+
+[ext_resource type="Script" path="res://modules/behavior/conditions/is_below_50.gd" id="1_mxx5c"]
+
+[node name="IsBelow50" type="Node"]
+script = ExtResource("1_mxx5c")
