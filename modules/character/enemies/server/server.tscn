@@ -15,7 +15,7 @@ max_health = 200
 speed = 0.0
 melee_attack_damage = 3.0
 melee_attack_speed = 0.0
-ranged_attack_damage = 0.0
+ranged_attack_damage = 1.0
 ranged_attack_speed = 0.0
 melee_attack_damage_modifier = 1.0
 melee_attack_speed_modifier = 1.0
@@ -29,9 +29,9 @@ scale = Vector2(2, 2)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("2_m6mo3")
-firewall_projectile = ExtResource("3_42ayo")
-cache_bomb = ExtResource("4_br6jv")
-sine_wave = ExtResource("5_qr18k")
+firewall_projectile_scene = ExtResource("3_42ayo")
+cache_bomb_scene = ExtResource("4_br6jv")
+sine_wave_scene = ExtResource("5_qr18k")
 base_stats = SubResource("Resource_h1i23")
 
 [node name="Hitbox" parent="." index="2"]
@@ -47,6 +47,5 @@ server = NodePath("../..")
 position = Vector2(-300, 0)
 server = NodePath("../..")
 
-[node name="ServerAi" parent="." index="4" node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("4_6cbqh")]
-blackboard = NodePath("@Node@43704")
-actor = NodePath("..")
+[node name="ServerAi" parent="." index="4" node_paths=PackedStringArray("blackboard") instance=ExtResource("4_6cbqh")]
+blackboard = NodePath("@Node@28730")

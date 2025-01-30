@@ -5,7 +5,7 @@ extends Area2D
 
 var player_pos: Vector2 = Player.global_position
 
-@onready var explosion_hitbox: Area2D = $ExplosionHitbox
+@onready var explosion_hitbox: CollisionShape2D = $ExplosionHitbox
 
 
 func _physics_process(delta: float) -> void:

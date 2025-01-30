@@ -17,7 +17,6 @@ script = ExtResource("1_vn2dd")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(2.47326, 2.47326)
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12

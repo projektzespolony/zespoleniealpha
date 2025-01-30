@@ -3,7 +3,6 @@ class_name Server extends Character
 @export var firewall_projectile_scene: PackedScene
 @export var cache_bomb_scene: PackedScene
 @export var sine_wave_scene: PackedScene
-@export var error: PackedScene
 
 var ordered_racks: Array[Node]
 var first_rack_destroyed: bool = false
@@ -60,7 +59,7 @@ func use_bomb_attack() -> void:
 
 func use_firewall() -> void:
 	firewall_running = true
-	for i in range(15):
+	for i in range(5):
 		await get_tree().create_timer(0.2).timeout
 		firewall(self)
 	firewall_running = false
