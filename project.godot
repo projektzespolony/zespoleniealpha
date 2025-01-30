@@ -13,7 +13,8 @@ config_version=5
 config/name="zespoleniealpha"
 run/main_scene="res://modules/world/main_menu_scene/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://assets/meta/icon.svg"
+boot_splash/image="res://assets/other/company_logo.png"
+config/icon="res://assets/other/POL-UG-01.svg"
 
 [autoload]
 
@@ -28,7 +29,13 @@ gdscript/warnings/untyped_declaration=1
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+mouse_cursor/custom_image="res://assets/ui/coursor.png"
+mouse_cursor/custom_image_hotspot=Vector2(16, 16)
+window/image=""
+window/tooltip_position_offset=Vector2(10, 10)
 
 [editor_plugins]
 

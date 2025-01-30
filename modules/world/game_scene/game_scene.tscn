@@ -510,3 +510,16 @@ boss_arena = NodePath("../BossArena")
 
 [node name="PauseMenu" parent="." instance=ExtResource("11_34oox")]
 visible = false
+offset_left = 51.0
+offset_top = -59.0
+offset_right = 51.0
+offset_bottom = -59.0
+scale = Vector2(3.56, 3.56)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
