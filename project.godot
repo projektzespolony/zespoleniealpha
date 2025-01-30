@@ -30,6 +30,7 @@ gdscript/warnings/untyped_declaration=1
 [display]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
@@ -40,6 +41,11 @@ window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
 >>>>>>> 0be37a7 (Death added)
+=======
+window/size/mode=3
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+>>>>>>> b706c4c (Merge fixes)
 mouse_cursor/custom_image="res://assets/ui/coursor.png"
 mouse_cursor/custom_image_hotspot=Vector2(16, 16)
 window/image=""
