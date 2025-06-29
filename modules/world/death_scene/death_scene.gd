@@ -29,6 +29,7 @@ func _ready() -> void:
 
 func _on_restart_button_up() -> void:
 	Player.position = Vector2(0, 0)
+	Player.stats.initialize(Player.base_stats)
 	get_tree().change_scene_to_file("res://modules/world/game_scene/game_scene.tscn")
 
 

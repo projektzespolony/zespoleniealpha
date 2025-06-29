@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bx3m2865fnrtv" path="res://modules/character/enemies/franke/franke.tscn" id="1_kwm14"]
 [ext_resource type="PackedScene" uid="uid://cq7cx8nvnnjca" path="res://modules/character/enemies/micro_biologist/micro_biologist.tscn" id="2_r6isu"]
 [ext_resource type="PackedScene" uid="uid://c8sv6cr7h4she" path="res://modules/character/enemies/report/report.tscn" id="3_5rvxo"]
-[ext_resource type="Script" path="res://modules/spawner/spawn_list.gd" id="4_rj57k"]
+[ext_resource type="Script" uid="uid://dwmtbo3qudbyf" path="res://modules/spawner/spawn_list.gd" id="4_rj57k"]
 
 [resource]
 script = ExtResource("4_rj57k")

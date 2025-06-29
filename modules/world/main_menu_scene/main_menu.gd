@@ -8,10 +8,14 @@ func _ready() -> void:
 	Engine.time_scale = 0
 	Player.visible = false
 
+
 func _on_start_button_button_up() -> void:
 	Engine.time_scale = 1
 	Player.visible = true
+	Player.global_position = Vector2(0, 0)
+	Player.stats.initialize(Player.base_stats)
 	get_tree().change_scene_to_packed(start_level)
+
 
 func _on_exit_button_button_up() -> void:
 	get_tree().quit()

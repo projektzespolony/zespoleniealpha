@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bygxkwqbhgaht"]
 
 [ext_resource type="PackedScene" uid="uid://dag67nytucxxc" path="res://modules/character/character.tscn" id="1_pf5eg"]
-[ext_resource type="Script" path="res://modules/character/enemies/server/server.gd" id="2_m6mo3"]
-[ext_resource type="Script" path="res://modules/stats/initial_stats.gd" id="2_nbyhu"]
+[ext_resource type="Script" uid="uid://baqil4hss6ceu" path="res://modules/character/enemies/server/server.gd" id="2_m6mo3"]
+[ext_resource type="Script" uid="uid://bct2g51nwsvuu" path="res://modules/stats/initial_stats.gd" id="2_nbyhu"]
 [ext_resource type="PackedScene" uid="uid://bp5j7v6wgjrs7" path="res://modules/character/enemies/server/projectile/firewall/firewall.tscn" id="3_42ayo"]
 [ext_resource type="PackedScene" uid="uid://bkg3na7b4iu23" path="res://modules/behavior/behavior_trees/server_ai.tscn" id="4_6cbqh"]
 [ext_resource type="PackedScene" uid="uid://dyyxa73ipw5vv" path="res://modules/character/enemies/server/projectile/cache_bomb/cache_bomb.tscn" id="4_br6jv"]
@@ -47,5 +47,6 @@ server = NodePath("../..")
 position = Vector2(-300, 0)
 server = NodePath("../..")
 
-[node name="ServerAi" parent="." index="4" node_paths=PackedStringArray("blackboard") instance=ExtResource("4_6cbqh")]
-blackboard = NodePath("@Node@28730")
+[node name="ServerAi" parent="." index="4" node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("4_6cbqh")]
+blackboard = NodePath("@Node@35322")
+actor = NodePath("..")

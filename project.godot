@@ -12,7 +12,7 @@ config_version=5
 
 config/name="zespoleniealpha"
 run/main_scene="res://modules/world/main_menu_scene/main_menu.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/image="res://assets/other/company_logo.png"
 config/icon="res://assets/other/POL-UG-01.svg"
 
@@ -60,6 +60,7 @@ enabled=PackedStringArray("res://addons/beehave/plugin.cfg")
 folder_colors={
 "res://addons/": "gray",
 "res://assets/": "orange",
+"res://executable/": "yellow",
 "res://modules/": "teal",
 "res://modules/behavior/": "purple"
 }
@@ -93,7 +94,6 @@ down={
 shoot={
 "deadzone": 0.5,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(282, 24),"global_position":Vector2(291, 70),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
-, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":8,"position":Vector2(129, 14),"global_position":Vector2(138, 60),"factor":1.0,"button_index":4,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 melee_attack={

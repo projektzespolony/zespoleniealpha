@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dbjcc8cv8reic"]
 
-[ext_resource type="Script" path="res://modules/world/death_scene/death_scene.gd" id="1_5jd8l"]
+[ext_resource type="Script" uid="uid://dlcs6jp562d8t" path="res://modules/world/death_scene/death_scene.gd" id="1_5jd8l"]
 [ext_resource type="Theme" uid="uid://bv3wt0xlqf7g0" path="res://modules/themes/button_theme.tres" id="2_l7fwc"]
 
 [sub_resource type="Gradient" id="Gradient_gxjv7"]

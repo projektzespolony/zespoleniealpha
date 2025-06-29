@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://buvgxaisphq8d"]
 
 [ext_resource type="PackedScene" uid="uid://b76ofqud6ia58" path="res://modules/items/base_item/base_item.tscn" id="1_r8adq"]
-[ext_resource type="Script" path="res://modules/items/train_delay/train_delay.gd" id="2_2g4kf"]
-[ext_resource type="Script" path="res://modules/stats/initial_stats.gd" id="3_e4v1i"]
-[ext_resource type="Texture2D" uid="uid://hpuyyxxnxb2y" path="res://assets/game/upgrade_icons/train_delay.png" id="4_37okx"]
+[ext_resource type="Script" uid="uid://dxkstgghmdyk5" path="res://modules/items/train_delay/train_delay.gd" id="2_2g4kf"]
+[ext_resource type="Script" uid="uid://bct2g51nwsvuu" path="res://modules/stats/initial_stats.gd" id="3_e4v1i"]
+[ext_resource type="Texture2D" uid="uid://cfxnqkuqf6wm2" path="res://assets/game/upgrade_icons/train_delay.png" id="4_37okx"]
 
 [sub_resource type="Resource" id="Resource_lqlyq"]
 script = ExtResource("3_e4v1i")

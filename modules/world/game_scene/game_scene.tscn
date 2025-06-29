@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=4 uid="uid://ce5jdu83m0hw8"]
 
-[ext_resource type="Script" path="res://modules/world/game_scene/game_scene.gd" id="1_lil8e"]
+[ext_resource type="Script" uid="uid://2bmlyymb3slp" path="res://modules/world/game_scene/game_scene.gd" id="1_lil8e"]
 [ext_resource type="Texture2D" uid="uid://bfpc5mlugq1o2" path="res://assets/terrain/Ground/Tilemap_Elevation.png" id="2_236yy"]
 [ext_resource type="PackedScene" uid="uid://bd1pxk6bwey4e" path="res://modules/world/boss_arena/boss_arena.tscn" id="2_ermpc"]
 [ext_resource type="Texture2D" uid="uid://dej37na1ckntc" path="res://assets/terrain/Water/Foam/Foam.png" id="2_tdh71"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cfb02rt6gskn8" path="res://assets/terrain/Ground/Tilemap_Flat.png" id="6_fowac"]
 [ext_resource type="Resource" uid="uid://ctsl0tw7gnn8o" path="res://modules/spawner/spawner_lists/enemies_zone_1.tres" id="8_n6snx"]
 [ext_resource type="Resource" uid="uid://btmtgl3lxxb55" path="res://modules/spawner/spawner_lists/common_items.tres" id="9_1iqxh"]
-[ext_resource type="Script" path="res://modules/character/player/camera_follow.gd" id="10_5wdve"]
+[ext_resource type="Script" uid="uid://b71nkgk3c10f8" path="res://modules/character/player/camera_follow.gd" id="10_5wdve"]
 [ext_resource type="PackedScene" uid="uid://dx0sk2nko1yrf" path="res://modules/world/pause_menu_scene/pause_menu.tscn" id="11_34oox"]
 [ext_resource type="PackedScene" uid="uid://bpxg3yyuvivv7" path="res://modules/spawner/spawner.tscn" id="12_h726c"]
 
@@ -489,7 +489,7 @@ enemy_spawn_locations = NodePath("../Map/EnemySpawnPositions")
 item_spawn_locations = NodePath("../Map/ItemSpawnLocation")
 enemy_list = ExtResource("8_n6snx")
 item_list = ExtResource("9_1iqxh")
-enemy_limit = 1
+enemy_limit = 25
 item_limit = 5
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("tile_map", "boss_arena") groups=["Camera"]]

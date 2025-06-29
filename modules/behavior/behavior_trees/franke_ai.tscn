@@ -1,14 +1,14 @@
 [gd_scene load_steps=13 format=3 uid="uid://dxqegu1j1e77m"]
 
-[ext_resource type="Script" path="res://addons/beehave/nodes/beehave_tree.gd" id="1_kpek1"]
-[ext_resource type="Script" path="res://addons/beehave/nodes/composites/selector.gd" id="2_efn1s"]
-[ext_resource type="Script" path="res://addons/beehave/nodes/composites/sequence.gd" id="3_2rpyt"]
-[ext_resource type="Script" path="res://addons/beehave/nodes/decorators/inverter.gd" id="4_yvk8k"]
+[ext_resource type="Script" uid="uid://bl2ngs0m11i1e" path="res://addons/beehave/nodes/beehave_tree.gd" id="1_kpek1"]
+[ext_resource type="Script" uid="uid://b63862ikjldgp" path="res://addons/beehave/nodes/composites/selector.gd" id="2_efn1s"]
+[ext_resource type="Script" uid="uid://baip56001ails" path="res://addons/beehave/nodes/composites/sequence.gd" id="3_2rpyt"]
+[ext_resource type="Script" uid="uid://c1gfh6ry3477l" path="res://addons/beehave/nodes/decorators/inverter.gd" id="4_yvk8k"]
 [ext_resource type="PackedScene" uid="uid://dpu61b3ic3wcx" path="res://modules/behavior/conditions/is_player_within_area.tscn" id="5_ngkqp"]
 [ext_resource type="PackedScene" uid="uid://ct3qc2f7ogb2y" path="res://modules/behavior/leaves/move.tscn" id="6_cqq7n"]
 [ext_resource type="PackedScene" uid="uid://51w1svm0llkn" path="res://modules/behavior/conditions/can_shoot.tscn" id="7_e42x7"]
 [ext_resource type="PackedScene" uid="uid://cphjpoa4lm4hw" path="res://modules/behavior/leaves/shoot.tscn" id="8_30mvr"]
-[ext_resource type="Script" path="res://addons/beehave/nodes/decorators/failer.gd" id="9_mdqe4"]
+[ext_resource type="Script" uid="uid://bxtmmmlakch27" path="res://addons/beehave/nodes/decorators/failer.gd" id="9_mdqe4"]
 [ext_resource type="PackedScene" uid="uid://csritmdmd457o" path="res://modules/behavior/conditions/is_player_too_close.tscn" id="10_7y27y"]
 [ext_resource type="PackedScene" uid="uid://cnxldrqigla0c" path="res://modules/behavior/leaves/move_away.tscn" id="11_gkhua"]
 [ext_resource type="PackedScene" uid="uid://dfavcrob2e0e0" path="res://modules/behavior/leaves/reload.tscn" id="12_gm8mk"]
@@ -16,7 +16,7 @@
 [node name="FrankeAI" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_kpek1")
 tick_rate = 10
-blackboard = NodePath("@Node@299638")
+blackboard = NodePath("@Node@21789")
 actor = NodePath("")
 
 [node name="TargetIsClose" type="Node" parent="."]

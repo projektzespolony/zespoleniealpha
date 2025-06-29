@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://be6uxk42uhwk6"]
 
-[ext_resource type="Script" path="res://addons/beehave/nodes/beehave_tree.gd" id="1_hlgpp"]
-[ext_resource type="Script" path="res://addons/beehave/nodes/composites/sequence.gd" id="2_tqtma"]
+[ext_resource type="Script" uid="uid://bl2ngs0m11i1e" path="res://addons/beehave/nodes/beehave_tree.gd" id="1_hlgpp"]
+[ext_resource type="Script" uid="uid://baip56001ails" path="res://addons/beehave/nodes/composites/sequence.gd" id="2_tqtma"]
 [ext_resource type="PackedScene" uid="uid://dpu61b3ic3wcx" path="res://modules/behavior/conditions/is_player_within_area.tscn" id="3_sibw7"]
 [ext_resource type="PackedScene" uid="uid://q0jaeeoj1tor" path="res://modules/behavior/leaves/charge_at_player.tscn" id="4_w7nrk"]
 [ext_resource type="PackedScene" uid="uid://csritmdmd457o" path="res://modules/behavior/conditions/is_player_too_close.tscn" id="5_acbc0"]
@@ -10,8 +10,8 @@
 [node name="ReportAI" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_hlgpp")
 tick_rate = 10
-blackboard = NodePath("@Node@17288")
-actor = NodePath("..")
+blackboard = NodePath("@Node@21791")
+actor = NodePath("")
 
 [node name="SequenceComposite" type="Node" parent="."]
 script = ExtResource("2_tqtma")

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SpawnList" load_steps=15 format=3 uid="uid://btmtgl3lxxb55"]
 
 [ext_resource type="PackedScene" uid="uid://cm860mfphlg55" path="res://modules/items/all_nighter/all_nighter.tscn" id="1_2ae1w"]
-[ext_resource type="Script" path="res://modules/spawner/spawn_list.gd" id="1_2vkiv"]
+[ext_resource type="Script" uid="uid://dwmtbo3qudbyf" path="res://modules/spawner/spawn_list.gd" id="1_2vkiv"]
 [ext_resource type="PackedScene" uid="uid://b6oi7fxcrai5e" path="res://modules/items/eduroam/eduroam.tscn" id="2_6cliy"]
 [ext_resource type="PackedScene" uid="uid://cblfbue3u1jo8" path="res://modules/items/energy_drink/energy_drink.tscn" id="3_p2dmq"]
 [ext_resource type="PackedScene" uid="uid://kssbb5qbxqyv" path="res://modules/items/gym_membership/gym_membership.tscn" id="4_2n2iy"]
