@@ -19,54 +19,54 @@
 [node name="ServerAi" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_60t67")
 tick_rate = 3
-blackboard = NodePath("@Node@21015")
-actor = NodePath("..")
+blackboard = NodePath("@Node@17276")
+actor = NodePath("")
 
 [node name="SelectorComposite" type="Node" parent="."]
 script = ExtResource("2_dtga7")
 
-[node name="SequenceComposite" type="Node" parent="SelectorComposite"]
+[node name="Phase3" type="Node" parent="SelectorComposite"]
 script = ExtResource("10_sh347")
 
-[node name="IsBelow50" parent="SelectorComposite/SequenceComposite" instance=ExtResource("6_fe3pq")]
+[node name="IsBelow50" parent="SelectorComposite/Phase3" instance=ExtResource("6_fe3pq")]
 
-[node name="DeleteRack" parent="SelectorComposite/SequenceComposite" instance=ExtResource("5_kqyxw")]
+[node name="DeleteRack" parent="SelectorComposite/Phase3" instance=ExtResource("5_kqyxw")]
 
-[node name="CooldownDecorator2" type="Node" parent="SelectorComposite/SequenceComposite"]
+[node name="CooldownDecorator2" type="Node" parent="SelectorComposite/Phase3"]
 script = ExtResource("11_yas1q")
 wait_time = 0.15
 
-[node name="BossBombAttack" parent="SelectorComposite/SequenceComposite/CooldownDecorator2" instance=ExtResource("6_c711i")]
+[node name="BossBombAttack" parent="SelectorComposite/Phase3/CooldownDecorator2" instance=ExtResource("6_c711i")]
 
-[node name="BossSineAttack" parent="SelectorComposite/SequenceComposite" instance=ExtResource("7_gwlrl")]
+[node name="BossSineAttack" parent="SelectorComposite/Phase3" instance=ExtResource("7_gwlrl")]
 
-[node name="SequenceComposite2" type="Node" parent="SelectorComposite"]
+[node name="Phase2" type="Node" parent="SelectorComposite"]
 script = ExtResource("10_sh347")
 
-[node name="InverterDecorator" type="Node" parent="SelectorComposite/SequenceComposite2"]
+[node name="InverterDecorator" type="Node" parent="SelectorComposite/Phase2"]
 script = ExtResource("8_mv344")
 
-[node name="IsBelow50" type="Node" parent="SelectorComposite/SequenceComposite2/InverterDecorator"]
+[node name="IsBelow50" type="Node" parent="SelectorComposite/Phase2/InverterDecorator"]
 script = ExtResource("10_g8sg8")
 
-[node name="IsBelow75" parent="SelectorComposite/SequenceComposite2" instance=ExtResource("4_v2bte")]
+[node name="IsBelow75" parent="SelectorComposite/Phase2" instance=ExtResource("4_v2bte")]
 
-[node name="DeleteRack" parent="SelectorComposite/SequenceComposite2" instance=ExtResource("5_kqyxw")]
+[node name="DeleteRack" parent="SelectorComposite/Phase2" instance=ExtResource("5_kqyxw")]
 
-[node name="SelectorComposite3" type="Node" parent="SelectorComposite/SequenceComposite2"]
+[node name="Phase1" type="Node" parent="SelectorComposite/Phase2"]
 script = ExtResource("2_dtga7")
 
-[node name="CooldownDecorator" type="Node" parent="SelectorComposite/SequenceComposite2/SelectorComposite3"]
+[node name="CooldownDecorator" type="Node" parent="SelectorComposite/Phase2/Phase1"]
 script = ExtResource("11_yas1q")
-wait_time = 0.5
+wait_time = 0.1
 
-[node name="UseSineAttack" parent="SelectorComposite/SequenceComposite2/SelectorComposite3/CooldownDecorator" instance=ExtResource("9_3ywb1")]
+[node name="UseSineAttack" parent="SelectorComposite/Phase2/Phase1/CooldownDecorator" instance=ExtResource("9_3ywb1")]
 
-[node name="CooldownDecorator2" type="Node" parent="SelectorComposite/SequenceComposite2/SelectorComposite3"]
+[node name="CooldownDecorator2" type="Node" parent="SelectorComposite/Phase2/Phase1"]
 script = ExtResource("11_yas1q")
 wait_time = 1.25
 
-[node name="UseFirewall" parent="SelectorComposite/SequenceComposite2/SelectorComposite3/CooldownDecorator2" instance=ExtResource("10_73hjw")]
+[node name="UseFirewall" parent="SelectorComposite/Phase2/Phase1/CooldownDecorator2" instance=ExtResource("10_73hjw")]
 
 [node name="SequenceComposite3" type="Node" parent="SelectorComposite"]
 script = ExtResource("10_sh347")

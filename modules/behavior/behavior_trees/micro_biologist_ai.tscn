@@ -16,21 +16,21 @@
 [node name="MicroBiologistAI" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_r3h23")
 tick_rate = 10
-blackboard = NodePath("@Node@25131")
-actor = NodePath("..")
+blackboard = NodePath("@Node@17274")
+actor = NodePath("")
 
 [node name="SelectorComposite" type="Node" parent="."]
 script = ExtResource("2_kv8n1")
 
-[node name="SequenceComposite" type="Node" parent="SelectorComposite"]
+[node name="MoveAway" type="Node" parent="SelectorComposite"]
 script = ExtResource("3_1ujca")
 
-[node name="IsPlayerTooClose" parent="SelectorComposite/SequenceComposite" instance=ExtResource("4_3prpy")]
+[node name="IsPlayerTooClose" parent="SelectorComposite/MoveAway" instance=ExtResource("4_3prpy")]
 
-[node name="InverterDecorator" type="Node" parent="SelectorComposite/SequenceComposite"]
+[node name="InverterDecorator" type="Node" parent="SelectorComposite/MoveAway"]
 script = ExtResource("5_5uhns")
 
-[node name="KeepDistance" parent="SelectorComposite/SequenceComposite/InverterDecorator" instance=ExtResource("6_soi0t")]
+[node name="KeepDistance" parent="SelectorComposite/MoveAway/InverterDecorator" instance=ExtResource("6_soi0t")]
 
 [node name="MoveCloser" type="Node" parent="SelectorComposite"]
 script = ExtResource("3_1ujca")
@@ -38,14 +38,14 @@ script = ExtResource("3_1ujca")
 [node name="InverterDecorator" type="Node" parent="SelectorComposite/MoveCloser"]
 script = ExtResource("5_5uhns")
 
-[node name="IsPlayerWithinArea" parent="SelectorComposite/MoveCloser/InverterDecorator" instance=ExtResource("7_f71a5")]
+[node name="IsPlayerTooClose" parent="SelectorComposite/MoveCloser/InverterDecorator" instance=ExtResource("7_f71a5")]
 
 [node name="Move" parent="SelectorComposite/MoveCloser" instance=ExtResource("8_hep4f")]
 
 [node name="AttackLogic" type="Node" parent="SelectorComposite"]
 script = ExtResource("3_1ujca")
 
-[node name="IsPlayerWithinAttackRange" type="Node" parent="SelectorComposite/AttackLogic"]
+[node name="IsPlayerWithinRange" type="Node" parent="SelectorComposite/AttackLogic"]
 script = ExtResource("9_ok1vv")
 
 [node name="SelectorComposite2" type="Node" parent="SelectorComposite/AttackLogic"]

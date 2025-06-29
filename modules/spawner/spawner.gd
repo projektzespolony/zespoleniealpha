@@ -10,7 +10,7 @@ var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 
 func _ready() -> void:
-	spawn_all_entities(0.5, 1.5, enemy_limit, enemy_spawn_locations, enemy_list, false, false)
+	spawn_all_entities(1, 2, enemy_limit, enemy_spawn_locations, enemy_list, false, false)
 	spawn_all_entities(3, 5, item_limit, item_spawn_locations, item_list, true, true)
 
 

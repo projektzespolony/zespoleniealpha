@@ -16,7 +16,7 @@
 [node name="FrankeAI" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_kpek1")
 tick_rate = 10
-blackboard = NodePath("@Node@299638")
+blackboard = NodePath("@Node@17270")
 actor = NodePath("")
 
 [node name="TargetIsClose" type="Node" parent="."]

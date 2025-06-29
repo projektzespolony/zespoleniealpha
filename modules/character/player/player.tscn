@@ -9,9 +9,9 @@
 
 [sub_resource type="Resource" id="Resource_xhy3y"]
 script = ExtResource("3_eaehl")
-max_health = 10
+max_health = 100
 speed = 500.0
-melee_attack_damage = 50.0
+melee_attack_damage = 5.0
 melee_attack_speed = 2.0
 ranged_attack_damage = 3.0
 ranged_attack_speed = 2.0

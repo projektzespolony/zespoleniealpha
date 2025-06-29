@@ -489,7 +489,7 @@ enemy_spawn_locations = NodePath("../Map/EnemySpawnPositions")
 item_spawn_locations = NodePath("../Map/ItemSpawnLocation")
 enemy_list = ExtResource("8_n6snx")
 item_list = ExtResource("9_1iqxh")
-enemy_limit = 1
+enemy_limit = 25
 item_limit = 5
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("tile_map", "boss_arena") groups=["Camera"]]

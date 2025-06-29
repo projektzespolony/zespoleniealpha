@@ -5,6 +5,7 @@
 
 [sub_resource type="Gradient" id="Gradient_gxjv7"]
 offsets = PackedFloat32Array(0.996226, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_pyi5u"]
 gradient = SubResource("Gradient_gxjv7")

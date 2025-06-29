@@ -8,6 +8,7 @@ var pics = []
 func _ready() -> void:
 	var path = "res://assets/ui/death_screens/"
 	var dir = DirAccess.open(path)
+	print(path, dir)
 	if dir:
 		dir.list_dir_begin()
 		while true:
@@ -29,6 +30,7 @@ func _ready() -> void:
 
 func _on_restart_button_up() -> void:
 	Player.position = Vector2(0, 0)
+	Player.stats.initialize(Player.base_stats)
 	get_tree().change_scene_to_file("res://modules/world/game_scene/game_scene.tscn")
 
 

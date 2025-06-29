@@ -47,5 +47,6 @@ server = NodePath("../..")
 position = Vector2(-300, 0)
 server = NodePath("../..")
 
-[node name="ServerAi" parent="." index="4" node_paths=PackedStringArray("blackboard") instance=ExtResource("4_6cbqh")]
-blackboard = NodePath("@Node@28730")
+[node name="ServerAi" parent="." index="4" node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("4_6cbqh")]
+blackboard = NodePath("@Node@17286")
+actor = NodePath("..")
